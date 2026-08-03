@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On Floor | Soluctions</title>
+    <link rel="icon" type="image/png" href="logo/iconnav.png">
+
+    <!-- Distinctive Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500&family=Syne:wght@700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="loading">
+    <div class="noise-overlay"></div>
+    <div class="gradient-mesh"></div>
+
+    <nav class="nav-system">
+        <div class="nav-brand">
+            <img src="logo/logosemfundo.png" alt="On Floor" class="brand-glyph">
+        </div>
+        <div class="nav-status">
+            <div class="status-dot"></div>
+            <span>System Online</span>
+        </div>
+        <div class="nav-links-desktop">
+            <a href="#capabilities" class="nav-anchor">Serviços</a>
+            <a href="#portfolio" class="nav-anchor">Portfolio</a>
+            <a href="#contato" class="nav-anchor">Contato</a>
+        </div>
+        <button class="menu-trigger" id="menuTrigger" aria-label="Abrir menu" aria-expanded="false">
+            <i data-lucide="menu" id="menuIcon"></i>
+        </button>
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+        <div class="drawer-header">
+            <img src="logo/logosemfundo.png" alt="On Floor" class="brand-glyph">
+            <button class="drawer-close" id="drawerClose" aria-label="Fechar menu">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <nav class="drawer-nav">
+            <a href="#capabilities" class="drawer-link" data-close-drawer>Serviços <i data-lucide="arrow-right"></i></a>
+            <a href="#portfolio" class="drawer-link" data-close-drawer>Portfolio <i data-lucide="arrow-right"></i></a>
+            <a href="#contato" class="drawer-link" data-close-drawer>Contato <i data-lucide="arrow-right"></i></a>
+        </nav>
+        <div class="drawer-cta">
+            <a href="https://wa.me/61985632400" target="_blank" class="btn-void" style="font-size:1rem;">FALAR NO
+                WHATSAPP <i data-lucide="message-circle"></i></a>
+        </div>
+        <div class="drawer-footer">
+            <span>// CNTRL. ALT. EVOLVE.</span>
+        </div>
+    </div>
+
+    <main>
+        <!-- ═══════════════════════════════════════════════════
+             HERO
+             IMAGEM IDEAL: Foto aspiracional de ambiente tech,
+             dashboard futurista, ou equipe em ação.
+             Transmite: Inteligência, modernidade, confiança.
+        ═══════════════════════════════════════════════════ -->
+        <!-- HERO DESKTOP -->
+        <section class="hero-sequence hero-desktop">
+            <div class="hero-typographic">
+                <h1 class="display-massive">
+                    <span class="reveal-text">INTELLIGENCE</span><br>
+                    <span class="reveal-text highlight-matrix">AS A SERVICE.</span>
+                </h1>
+            </div>
+
+            <div class="hero-metrics">
+                <p class="hero-manifesto reveal-text slow">A On Floor transforma operações comuns em sistemas
+                    inteligentes. Agentes, automações e sistemas desenhados para o seu negócio crescer sem limite
+                    humano.</p>
+                <a href="#contato" class="btn-void">AGENDAR DIAGNÓSTICO <i data-lucide="arrow-right"></i></a>
+            </div>
+
+            <div class="visual-anchor">
+                <div class="hero-image-frame">
+                    <img src="/images/equipe.jpg" alt="On Floor em ação" class="hero-full-img">
+                    <div class="target-crosshair hero-placeholder">
+                        <i data-lucide="focus"></i>
+                        <span>KEY VISUAL — Foto aspiracional / Equipe / Dashboard</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HERO MOBILE -->
+        <section class="hero-mobile">
+            <div class="hero-mobile-bg">
+                <img src="images/equipe.jpg" alt="On Floor em ação" class="hero-mobile-img">
+                <div class="hero-mobile-overlay"></div>
+            </div>
+            <div class="hero-mobile-content">
+                <div class="hero-mobile-badge">
+                    <div class="status-dot"></div>
+                    <span>COGNITIVE INFRASTRUCTURE</span>
+                </div>
+                <h1 class="hero-mobile-title">
+                    <span class="reveal-text">INTELLIGENCE</span><br>
+                    <span class="reveal-text highlight-matrix">AS A SERVICE.</span>
+                </h1>
+                <p class="hero-mobile-text reveal-text slow">Agentes, automações e sistemas desenhados para o seu
+                    negócio crescer sem limite humano.</p>
+                <div class="hero-mobile-actions">
+                    <a href="#contato" class="btn-mobile-primary">AGENDAR DIAGNÓSTICO <i
+                            data-lucide="arrow-right"></i></a>
+                    <a href="#capabilities" class="btn-mobile-ghost">VER SERVIÇOS</a>
+                </div>
+                <div class="hero-mobile-scroll">
+                    <i data-lucide="chevrons-down"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════
+             CAPABILITIES
+        ═══════════════════════════════════════════════════ -->
+        <section id="capabilities" class="capabilities-matrix">
+            <h2 class="section-title">CAPABILITIES</h2>
+            <div class="capability-grid">
+                <div class="matrix-card">
+                    <div class="card-indicator">01</div>
+                    <h3>Soluções de IA</h3>
+                    <p>Aplicabilidades customizadas de inteligência artificial desenhadas para injetar eficiência e
+                        resolver obstáculos complexos da sua operação.</p>
+                </div>
+                <div class="matrix-card">
+                    <div class="card-indicator">02</div>
+                    <h3>Agentes de IA</h3>
+                    <p>Atendentes, vendedores e backoffice autônomos que operam 24/7 de maneira sênior, fluente e
+                        perfeitamente integrada aos seus dados.</p>
+                </div>
+                <div class="matrix-card">
+                    <div class="card-indicator">03</div>
+                    <h3>Sistemas</h3>
+                    <p>Construção de plataformas robustas sob medida. Desenvolvemos com as tecnologias mais escaláveis
+                        para suportar alta demanda.</p>
+                </div>
+                <div class="matrix-card">
+                    <div class="card-indicator">04</div>
+                    <h3>Landing Pages</h3>
+                    <p>Páginas de altíssima conversão focadas na percepção de valor extrema. Não construímos sites,
+                        forjamos ferramentas de venda.</p>
+                </div>
+                <div class="matrix-card">
+                    <div class="card-indicator">05</div>
+                    <h3>Automações Internas</h3>
+                    <p>Criação de fluxos complexos e invisíveis que eliminam o trabalho manual repetitivo da sua equipe
+                        com ferramentas modernas.</p>
+                </div>
+                <div class="matrix-card matrix-card--cta">
+                    <div class="card-indicator">// STATUS: READY_TO_DEPLOY</div>
+                    <h3>Descubra o potencial escondido da sua empresa.</h3>
+                    <br>
+                    <a href="#contato" class="btn-void" style="font-size: 1rem;">FALAR COM TIME COMERCIAL <i
+                            data-lucide="arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════
+             PORTFOLIO / CASES
+             Esta section substitui "Visão Absoluta".
+             
+             IMAGENS IDEAIS:
+             → Card 1 (grande): Screenshot de um agente funcionando
+               Ex: interface do WhatsApp com o agente respondendo,
+               ou tela de um chatbot em operação real.
+             → Card 2: Print de um flow no n8n ou sistema de automação.
+               Mostre a complexidade visual do trabalho.
+             → Card 3: Screenshot de uma landing page entregue
+               (antes/depois ou versão desktop de um projeto real).
+             → Card 4 (placeholder para mais): Print de dashboard ou
+               sistema web que vocês desenvolveram.
+        ═══════════════════════════════════════════════════ -->
+        <section id="portfolio" class="portfolio-section">
+            <div class="portfolio-header">
+                <h2 class="section-title">PORTFOLIO</h2>
+                <p class="portfolio-subtitle">Casos reais. Resultados comprovados.</p>
+            </div>
+
+            <div class="portfolio-grid">
+
+                <!-- Case 01 — GRANDE span 2 cols -->
+                <a href="https://assistentelara.onfloor.com.br" class="portfolio-case case-large case-link">
+                    <div class="case-bg">
+                        <div class="case-bg-placeholder">
+                            <i data-lucide="bot"></i>
+                            <img src="images/larapage.png" alt="Agente de IA">
+                            <span>AGENTE EM OPERAÇÃO</span>
+                        </div>
+                    </div>
+                    <div class="case-label-strip">
+                        <span class="case-tag">Agente de IA</span>
+                        <h3 class="case-label-title">Atendimento Autônomo</h3>
+                        <span class="case-hint">Passe o mouse para ver <i data-lucide="arrow-up"></i></span>
+                    </div>
+                    <div class="case-reveal-panel">
+                        <span class="case-tag">Agente de IA</span>
+                        <h3>Atendimento Autônomo</h3>
+                        <p>Agente inteligente com memória de contexto integrado ao CRM do cliente, reduzindo 80% do
+                            volume humano de suporte.</p>
+                        <span class="case-cta-link">Quero essa solução <i data-lucide="arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- Case 02 -->
+                <a href="#contato" class="portfolio-case case-link">
+                    <div class="case-bg">
+                        <div class="case-bg-placeholder">
+                            <i data-lucide="workflow"></i>
+                            <img src="images/fluxo.png" alt="Automação">
+                            <span>FLOW DE AUTOMAÇÃO</span>
+                        </div>
+                    </div>
+                    <div class="case-label-strip">
+                        <span class="case-tag">Automação</span>
+                        <h3 class="case-label-title">Pipeline Interno</h3>
+                        <span class="case-hint">Passe o mouse para ver <i data-lucide="arrow-up"></i></span>
+                    </div>
+                    <div class="case-reveal-panel">
+                        <span class="case-tag">Automação</span>
+                        <h3>Pipeline Interno</h3>
+                        <p>Fluxo de automação que eliminou 40h/mês de trabalho manual da equipe comercial.</p>
+                        <span class="case-cta-link">Quero essa solução <i data-lucide="arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- Case 03 -->
+                <a href="#contato" class="portfolio-case case-link">
+                    <div class="case-bg">
+                        <div class="case-bg-placeholder">
+                            <i data-lucide="layout"></i>
+                            <img src="images/lp.png" alt="Automação">
+                            <span>LANDING PAGE</span>
+                        </div>
+                    </div>
+                    <div class="case-label-strip">
+                        <span class="case-tag">Landing Page</span>
+                        <h3 class="case-label-title">Conversão Cirúrgica</h3>
+                        <span class="case-hint">Passe o mouse para ver <i data-lucide="arrow-up"></i></span>
+                    </div>
+                    <div class="case-reveal-panel">
+                        <span class="case-tag">Landing Page</span>
+                        <h3>Conversão Cirúrgica</h3>
+                        <p>LP desenvolvida com foco em CRO, elevando a taxa de conversão de 2% para 8.3% em 30 dias.</p>
+                        <span class="case-cta-link">Quero essa solução <i data-lucide="arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- Case 04 -->
+                <a href="#contato" class="portfolio-case case-link">
+                    <div class="case-bg">
+                        <div class="case-bg-placeholder">
+                            <i data-lucide="monitor"></i>
+                            <img src="images/sistemainterno.png" alt="Sistema Customizado">
+                            <span>SISTEMA WEB</span>
+                        </div>
+                    </div>
+                    <div class="case-label-strip">
+                        <span class="case-tag">Sistema</span>
+                        <h3 class="case-label-title">Plataforma Customizada</h3>
+                        <span class="case-hint">Passe o mouse para ver <i data-lucide="arrow-up"></i></span>
+                    </div>
+                    <div class="case-reveal-panel">
+                        <span class="case-tag">Sistema</span>
+                        <h3>Plataforma Customizada</h3>
+                        <p>Sistema completo de gestão, do zero ao deploy, entregue em 45 dias com alta disponibilidade.
+                        </p>
+                        <span class="case-cta-link">Quero essa solução <i data-lucide="arrow-right"></i></span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════
+             CONTATO / CTA FINAL
+        ═══════════════════════════════════════════════════ -->
+        <section id="contato" class="contact-section">
+            <div class="contact-inner">
+                <div class="contact-label">// INICIAR PROJETO</div>
+                <h2 class="display-massive" style="font-size: clamp(2.5rem, 7vw, 7rem);">PRONTO PARA<br><span
+                        class="highlight-matrix">EVOLUIR?</span></h2>
+                <p>Agende um diagnóstico gratuito de 30 minutos com nosso time técnico e descubra quais soluções se
+                    encaixam no seu negócio.</p>
+                <div class="contact-actions">
+                    <a href="https://wa.me/61985632400" target="_blank" class="btn-void massive-cta">FALAR NO WHATSAPP
+                        <i data-lucide="message-circle"></i></a>
+                    <a href="mailto:onfloor@gmail.com" class="contact-email">onfloor@gmail.com</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="system-footer">
+        <div class="footer-data">
+            <img src="logo/onfloorwhite.png" alt="On Floor" class="footer-logo">
+            <span>Inteligência Artificial para resultados reais.</span>
+        </div>
+        <div class="footer-meta">
+            <span>&copy;
+                <script>document.write(new Date().getFullYear())</script> On Floor. Todos os direitos reservados.
+            </span>
+            <span>CNTRL. ALT. EVOLVE.</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
