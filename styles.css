@@ -2,13 +2,13 @@
    Aesthetic: Cyber-Neuro Luxury
    DFII Score: 13/15
    Fonts: Syne (display) + Plus Jakarta Sans (body)
-   Anchor: Massive dark typography with yellow neural glow
+   Anchor: Massive dark typography with violet neural glow
 ═══════════════════════════════════════════════════ */
 
 :root {
     --void: #030005;
-    --neuro-yellow: #f5c518;
-    --neuro-ghost: rgba(245, 197, 24, 0.24);
+    --neuro-violet: #861d97;
+    --neuro-ghost: rgba(134, 29, 151, 0.24);
     --pure: #ffffff;
     --chrome: #a39ca8;
 
@@ -50,8 +50,8 @@ body {
     left: -20%;
     width: 140vw;
     height: 140vh;
-    background: radial-gradient(circle at 70% 30%, rgba(245, 197, 24, 0.15) 0%, transparent 60%),
-        radial-gradient(circle at 30% 80%, rgba(245, 197, 24, 0.08) 0%, transparent 50%);
+    background: radial-gradient(circle at 70% 30%, rgba(134, 29, 151, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 30% 80%, rgba(134, 29, 151, 0.08) 0%, transparent 50%);
     z-index: -1;
     pointer-events: none;
 }
@@ -86,7 +86,7 @@ body {
 .status-dot {
     width: 8px;
     height: 8px;
-    background: var(--neuro-yellow);
+    background: var(--neuro-violet);
     border-radius: 50%;
     animation: pulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
 }
@@ -96,7 +96,7 @@ body {
     0%,
     100% {
         opacity: 1;
-        box-shadow: 0 0 10px var(--neuro-yellow);
+        box-shadow: 0 0 10px var(--neuro-violet);
     }
 
     50% {
@@ -128,7 +128,7 @@ body {
 .highlight-matrix {
     /* The requested 135deg gradient with 24% opacity transparency logic
        Using linear-gradient to pure black on text creates an intense look */
-    background: linear-gradient(135deg, var(--neuro-yellow) 0%, #b8860b 100%);
+    background: linear-gradient(135deg, var(--neuro-violet) 0%, #3a0045 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -172,14 +172,14 @@ body {
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 1.5rem;
-    border-bottom: 2px solid var(--neuro-yellow);
+    border-bottom: 2px solid var(--neuro-violet);
     padding-bottom: 0.5rem;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .btn-void:hover {
     gap: 2rem;
-    color: var(--neuro-yellow);
+    color: var(--neuro-violet);
 }
 
 /* Hero Image Frame — mostra imagem completa sem crop */
@@ -195,7 +195,7 @@ body {
 .hero-image-frame {
     width: 100%;
     position: relative;
-    border: 1px solid rgba(245, 197, 24, 0.25);
+    border: 1px solid rgba(134, 29, 151, 0.25);
     background: var(--neuro-ghost);
     overflow: hidden;
 }
@@ -211,14 +211,14 @@ body {
     max-height: 75vh;
 }
 
-/* Sobreposição gradiente amarela — identidade On Floor (135deg, #f5c518 24%) */
+/* Sobreposição gradiente roxa — identidade On Floor (135deg, #861d97 24%) */
 .hero-image-frame::after {
     content: '';
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg,
-            rgba(245, 197, 24, 0.55) 0%,
-            rgba(92, 70, 0, 0.30) 50%,
+            rgba(134, 29, 151, 0.55) 0%,
+            rgba(58, 0, 69, 0.30) 50%,
             rgba(0, 0, 0, 0.10) 100%);
     pointer-events: none;
     z-index: 1;
@@ -242,7 +242,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    color: var(--neuro-yellow);
+    color: var(--neuro-violet);
     font-family: var(--font-display);
     text-transform: uppercase;
     font-size: 0.8rem;
@@ -260,7 +260,7 @@ body {
     font-family: var(--font-display);
     font-size: 1.5rem;
     letter-spacing: 5px;
-    color: var(--neuro-yellow);
+    color: var(--neuro-violet);
     margin-bottom: 5rem;
 }
 
@@ -268,7 +268,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2px;
-    background: rgba(245, 197, 24, 0.2);
+    background: rgba(134, 29, 151, 0.2);
 }
 
 .matrix-card {
@@ -278,7 +278,7 @@ body {
 }
 
 .matrix-card:hover {
-    background: rgba(245, 197, 24, 0.05);
+    background: rgba(134, 29, 151, 0.05);
 }
 
 .card-indicator {
@@ -442,8 +442,8 @@ html {
     right: 0;
     width: min(85vw, 360px);
     height: 100dvh;
-    background: #0a0800;
-    border-left: 1px solid rgba(245, 197, 24, 0.25);
+    background: #0a000f;
+    border-left: 1px solid rgba(134, 29, 151, 0.25);
     z-index: 199;
     display: flex;
     flex-direction: column;
@@ -466,7 +466,7 @@ html {
 
 .drawer-close {
     background: none;
-    border: 1px solid rgba(245, 197, 24, 0.3);
+    border: 1px solid rgba(134, 29, 151, 0.3);
     color: var(--pure);
     cursor: pointer;
     width: 40px;
@@ -478,8 +478,8 @@ html {
 }
 
 .drawer-close:hover {
-    background: rgba(245, 197, 24, 0.15);
-    border-color: var(--neuro-yellow);
+    background: rgba(134, 29, 151, 0.15);
+    border-color: var(--neuro-violet);
 }
 
 .drawer-nav {
@@ -573,7 +573,7 @@ html {
             rgba(3, 0, 5, 0.2) 30%,
             rgba(3, 0, 5, 0.4) 60%,
             rgba(3, 0, 5, 0.97) 100%),
-        linear-gradient(135deg, rgba(245, 197, 24, 0.35) 0%, transparent 60%);
+        linear-gradient(135deg, rgba(134, 29, 151, 0.35) 0%, transparent 60%);
 }
 
 .hero-mobile-content {
@@ -632,8 +632,8 @@ html {
     justify-content: center;
     gap: 0.75rem;
     text-decoration: none;
-    background: var(--neuro-yellow);
-    color: var(--void);
+    background: var(--neuro-violet);
+    color: var(--pure);
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 0.85rem;
@@ -646,7 +646,7 @@ html {
 
 .btn-mobile-primary:active {
     transform: scale(0.97);
-    background: #d4a90f;
+    background: #6d1680;
 }
 
 .btn-mobile-ghost {
@@ -666,7 +666,7 @@ html {
 }
 
 .btn-mobile-ghost:active {
-    border-color: var(--neuro-yellow);
+    border-color: var(--neuro-violet);
     transform: scale(0.97);
 }
 
@@ -713,8 +713,8 @@ html {
     font-size: 0.8rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--neuro-yellow);
-    border-bottom: 1px solid rgba(245, 197, 24, 0.4);
+    color: var(--neuro-violet);
+    border-bottom: 1px solid rgba(134, 29, 151, 0.4);
     padding-bottom: 2px;
     margin-top: 0.5rem;
     transition: gap 0.3s ease, color 0.3s ease;
@@ -758,7 +758,7 @@ html {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3px;
-    background: rgba(245, 197, 24, 0.15);
+    background: rgba(134, 29, 151, 0.15);
 }
 
 .portfolio-case {
@@ -779,7 +779,7 @@ html {
 .case-bg {
     position: absolute;
     inset: 0;
-    background: rgba(245, 197, 24, 0.04);
+    background: rgba(134, 29, 151, 0.04);
 }
 
 .case-bg img {
@@ -803,7 +803,7 @@ html {
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    color: rgba(245, 197, 24, 0.3);
+    color: rgba(134, 29, 151, 0.3);
     font-family: var(--font-display);
     font-size: 0.75rem;
     letter-spacing: 3px;
@@ -899,7 +899,7 @@ html {
     background: rgba(3, 0, 5, 0.92);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-top: 1px solid rgba(245, 197, 24, 0.3);
+    border-top: 1px solid rgba(134, 29, 151, 0.3);
     z-index: 3;
     transform: translateY(105%);
     /* começa escondido abaixo */
@@ -931,8 +931,8 @@ html {
     font-size: 0.75rem;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--neuro-yellow);
-    border: 1px solid rgba(245, 197, 24, 0.4);
+    color: var(--neuro-violet);
+    border: 1px solid rgba(134, 29, 151, 0.4);
     padding: 0.3rem 0.8rem;
     width: fit-content;
 }
@@ -955,13 +955,13 @@ html {
     transform: translate(-50%, -50%);
     width: 60vw;
     height: 60vh;
-    background: radial-gradient(circle, rgba(245, 197, 24, 0.12) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(134, 29, 151, 0.12) 0%, transparent 70%);
     pointer-events: none;
 }
 
 .contact-label {
     font-family: var(--font-display);
-    color: var(--neuro-yellow);
+    color: var(--neuro-violet);
     font-size: 0.9rem;
     letter-spacing: 3px;
     margin-bottom: 2rem;
@@ -994,7 +994,7 @@ html {
 
 .contact-email:hover {
     color: var(--pure);
-    border-color: var(--neuro-yellow);
+    border-color: var(--neuro-violet);
 }
 
 /* Footer update */
@@ -1090,15 +1090,15 @@ html {
         width: 44px;
         height: 44px;
         background: none;
-        border: 1px solid rgba(245, 197, 24, 0.35);
+        border: 1px solid rgba(134, 29, 151, 0.35);
         color: var(--pure);
         cursor: pointer;
         transition: border-color 0.3s ease, background 0.3s ease;
     }
 
     .menu-trigger:active {
-        background: rgba(245, 197, 24, 0.15);
-        border-color: var(--neuro-yellow);
+        background: rgba(134, 29, 151, 0.15);
+        border-color: var(--neuro-violet);
     }
 
     .nav-system {
