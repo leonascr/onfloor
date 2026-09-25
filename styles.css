@@ -766,6 +766,8 @@ textarea:focus-visible {
 .clients-marquee {
     --logo-gap: clamp(3rem, 7vw, 5.5rem);
     overflow: hidden;
+    /* folga para o logo subir no hover sem ser cortado pelo overflow */
+    padding: 8px 0;
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
     mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
 }
