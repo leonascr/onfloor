@@ -1528,9 +1528,115 @@ textarea:focus-visible {
     font-size: 0.97rem;
 }
 
+/* ═══════════════ PERGUNTAS FREQUENTES ═══════════════ */
+.faq-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: start;
+}
+
+.faq-intro {
+    position: sticky;
+    top: calc(var(--nav-h) + 2rem);
+}
+
+.faq-intro > p:not(.eyebrow) {
+    margin: 1rem 0 1.75rem;
+    max-width: 340px;
+}
+
+.faq-list {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.faq-item {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item:hover,
+.faq-item[open] {
+    border-color: var(--brand-300);
+}
+
+.faq-item[open] {
+    box-shadow: var(--shadow-sm);
+}
+
+.faq-item summary {
+    position: relative;
+    display: block;
+    padding: 1.2rem 3.75rem 1.2rem 1.4rem;
+    font-family: var(--font-display);
+    font-size: 1.08rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--ink);
+    cursor: pointer;
+    list-style: none;
+    border-radius: var(--radius);
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+}
+
+/* botão "+" que vira "×" ao abrir */
+.faq-item summary::before,
+.faq-item summary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 1.4rem;
+    width: 14px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--brand);
+    transition: transform 0.3s var(--ease-out);
+}
+
+.faq-item summary::after {
+    transform: rotate(90deg);
+}
+
+.faq-item[open] summary::before {
+    transform: rotate(45deg);
+}
+
+.faq-item[open] summary::after {
+    transform: rotate(135deg);
+}
+
+.faq-answer {
+    padding: 0 1.4rem 1.3rem;
+}
+
+.faq-item[open] .faq-answer {
+    animation: fadeUp 0.4s var(--ease-out);
+}
+
+.faq-answer p {
+    font-size: 0.97rem;
+    max-width: 62ch;
+}
+
 /* ═══════════════ CONTATO / DIAGNÓSTICO ═══════════════ */
 .contact-section {
     padding-top: 0;
+}
+
+/* depois de uma seção com fundo suave, o painel precisa de respiro próprio */
+.section-soft + .contact-section {
+    padding-top: var(--section-y);
 }
 
 .contact-panel {
@@ -1716,6 +1822,23 @@ textarea:focus-visible {
 
 .footer-brand p {
     max-width: 320px;
+}
+
+/* localização na mesma linha do copyright */
+.footer-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-left: 0.6rem;
+    padding-left: 0.75rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    white-space: nowrap;
+}
+
+.footer-location .icon {
+    width: 0.95em;
+    height: 0.95em;
+    color: var(--brand-300);
 }
 
 .footer-links {
@@ -1906,6 +2029,14 @@ textarea:focus-visible {
 
     .contact-panel {
         grid-template-columns: 1fr;
+    }
+
+    .faq-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-intro {
+        position: static;
     }
 }
 
@@ -2234,6 +2365,14 @@ textarea:focus-visible {
     .footer-top,
     .footer-meta {
         flex-direction: column;
+    }
+
+    /* no celular a localização vai para a linha de baixo, sem o separador */
+    .footer-location {
+        display: flex;
+        margin: 0.35rem 0 0;
+        padding-left: 0;
+        border-left: 0;
     }
 
     .footer-meta {

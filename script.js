@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ─── SCROLL REVEAL ────────────────────────────────────
     // Classes (e não estilos inline) para não travar o efeito de hover dos cards
-    const groups = ['.compare-row', '.bento-card', '.showcase-panels', '.step', '.contact-panel'];
+    const groups = ['.compare-row', '.bento-card', '.showcase-panels', '.step', '.faq-item', '.contact-panel'];
     if (!reduceMotion && 'IntersectionObserver' in window) {
         const scrollObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
