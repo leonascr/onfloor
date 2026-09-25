@@ -305,6 +305,63 @@ document.addEventListener('DOMContentLoaded', () => {
     // O lead é enviado ao n8n, que grava na tabela leads_site do Supabase.
     const LEAD_WEBHOOK = 'https://n8n.onfloor.com.br/webhook/onfloor-diagnostico';
     const form = document.getElementById('diagnosticForm');
+
+    // ─── MÁSCARA DO WHATSAPP ──────────────────────────────
+    // Formata enquanto digita: (61) 98563-2400 (celular) ou (61) 3333-4444 (fixo).
+    // Aceita colar com +55 e mantém o cursor no lugar certo ao editar no meio.
+    const phoneInput = document.getElementById('f-whatsapp');
+    const phoneDigits = (value) => {
+        let d = value.replace(/\D/g, '');
+        if (d.length > 11 && d.startsWith('55')) d = d.slice(2);
+        return d.slice(0, 11);
+    };
+    const formatPhone = (d) => {
+        if (!d) return '';
+        if (d.length <= 2) return `(${d}`;
+        if (d.length <= 6) return `(${d.slice(0, 2)}) ${d.slice(2)}`;
+        if (d.length <= 10) return `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}`;
+        return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
+    };
+    const validatePhone = () => {
+        const n = phoneDigits(phoneInput.value).length;
+        phoneInput.setCustomValidity(n === 0 || n >= 10 ? '' : 'Informe o WhatsApp com DDD, por exemplo (61) 98563-2400.');
+    };
+
+    if (phoneInput) {
+        let lastDigits = '';
+        phoneInput.addEventListener('input', (e) => {
+            const el = phoneInput;
+            const caret = el.selectionStart ?? el.value.length;
+            // quantos dígitos existem antes do cursor
+            let before = el.value.slice(0, caret).replace(/\D/g, '').length;
+            let digits = el.value.replace(/\D/g, '');
+
+            // Apagou só um caractere de formatação, como ")" ou "-": apaga o dígito anterior
+            if (e.inputType === 'deleteContentBackward' && digits === lastDigits && before > 0) {
+                digits = digits.slice(0, before - 1) + digits.slice(before);
+                before -= 1;
+            }
+
+            // Colou/digitou com +55: remove o código do país
+            const raw = digits;
+            digits = phoneDigits(digits);
+            if (raw.length > 11 && raw.startsWith('55')) before = Math.max(0, before - 2);
+            before = Math.min(before, digits.length);
+
+            const formatted = formatPhone(digits);
+            el.value = formatted;
+            lastDigits = digits;
+
+            // recoloca o cursor logo depois do mesmo número de dígitos
+            let pos = 0;
+            for (let seen = 0; pos < formatted.length && seen < before; pos++) {
+                if (/\d/.test(formatted[pos])) seen++;
+            }
+            el.setSelectionRange(pos, pos);
+            validatePhone();
+        });
+        phoneInput.addEventListener('blur', validatePhone);
+    }
     const formStatus = document.getElementById('formStatus');
     const setStatus = (text, type) => {
         formStatus.textContent = text;
