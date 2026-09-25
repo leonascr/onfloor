@@ -301,9 +301,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // ─── FORMULÁRIO DE DIAGNÓSTICO → n8n (Supabase) + WHATSAPP ─
-    // O lead é registrado no n8n (tabela leads_site no Supabase) e a conversa no
-    // WhatsApp abre em paralelo. Se o registro falhar, o WhatsApp garante o contato.
+    // ─── FORMULÁRIO DE DIAGNÓSTICO → n8n (Supabase) ────────
+    // O lead é enviado ao n8n, que grava na tabela leads_site do Supabase.
     const LEAD_WEBHOOK = 'https://n8n.onfloor.com.br/webhook/onfloor-diagnostico';
     const form = document.getElementById('diagnosticForm');
     const formStatus = document.getElementById('formStatus');
@@ -334,21 +333,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const lines = [
-            'Olá, On Floor! Quero agendar um diagnóstico.',
-            '',
-            `Nome: ${lead.nome}`,
-            `Empresa: ${lead.empresa}`,
-            `WhatsApp: ${lead.whatsapp}`,
-        ];
-        if (lead.mensagem) lines.push(`O que quero melhorar: ${lead.mensagem}`);
-        const waUrl = `https://wa.me/61985632400?text=${encodeURIComponent(lines.join('\n'))}`;
-
-        // Abre o WhatsApp já no clique (depois de um await o navegador bloquearia o pop-up).
-        // 'noopener' faria window.open retornar null; zera o opener manualmente.
-        const win = window.open(waUrl, '_blank');
-        if (win) win.opener = null;
-
         const button = form.querySelector('button[type="submit"]');
         button.disabled = true;
         setStatus('Enviando…', 'loading');
@@ -372,13 +356,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         button.disabled = false;
         if (registered) {
-            setStatus('Recebemos seus dados! Continue a conversa pelo WhatsApp.', 'ok');
+            setStatus('Recebemos seus dados! Em breve entraremos em contato.', 'ok');
             form.reset();
         } else {
-            setStatus('Não conseguimos registrar agora, mas você pode falar com a gente pelo WhatsApp.', 'error');
+            setStatus('Não conseguimos enviar agora. Tente novamente em instantes.', 'error');
         }
-
-        // Pop-up bloqueado: leva para o WhatsApp na mesma aba
-        if (!win) window.location.href = waUrl;
     });
 });
