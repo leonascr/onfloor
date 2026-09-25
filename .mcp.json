@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "n8n-onfloor": {
+      "command": "node",
+      "args": ["C:/Users/Leozi/.mcp-servers/n8n-mcp/node_modules/n8n-mcp/dist/mcp/stdio-wrapper.js"],
+      "env": {
+        "MCP_MODE": "stdio",
+        "LOG_LEVEL": "error",
+        "DISABLE_CONSOLE_OUTPUT": "true",
+        "N8N_API_URL": "https://n8n.onfloor.com.br",
+        "N8N_API_KEY": "${N8N_ONFLOOR_API_KEY}"
+      }
+    }
+  }
+}

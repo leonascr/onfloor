@@ -1,0 +1,7 @@
+# Arquivos de configuração local que não devem ser publicados no site.
+.mcp.json
+.claude
+.vscode
+.dockerignore
+Dockerfile
+*.md

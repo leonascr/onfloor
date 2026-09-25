@@ -4,321 +4,589 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>On Floor | Soluctions</title>
-    <link rel="icon" type="image/png" href="logo/iconnav.png">
+    <title>On Floor | Automação, IA e Sistemas para Empresas</title>
+    <meta name="description"
+        content="A On Floor desenvolve automações, agentes de IA, sistemas e experiências digitais para reduzir tarefas manuais e melhorar operações empresariais.">
+    <link rel="canonical" href="https://onfloor.com.br/">
+    <meta name="theme-color" content="#861d97">
+    <link rel="icon" type="image/png" href="logo/favicon.png">
 
-    <!-- Distinctive Typography -->
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="On Floor">
+    <meta property="og:url" content="https://onfloor.com.br/">
+    <meta property="og:title" content="On Floor | Automação, IA e Sistemas para Empresas">
+    <meta property="og:description"
+        content="Automações, agentes de IA, sistemas e experiências digitais para reduzir tarefas manuais e melhorar operações empresariais.">
+    <meta property="og:image" content="https://onfloor.com.br/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500&family=Syne:wght@700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="loading">
-    <div class="noise-overlay"></div>
-    <div class="gradient-mesh"></div>
+<body>
+    <!-- Ícones (Lucide) em sprite inline: evita carregar a biblioteca inteira -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+        <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 5h16" /><path d="M4 12h16" /><path d="M4 19h16" /></symbol>
+        <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></symbol>
+        <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></symbol>
+        <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></symbol>
+        <symbol id="i-message-circle" viewBox="0 0 24 24"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></symbol>
+        <symbol id="i-file-text" viewBox="0 0 24 24"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" /><path d="M14 2v5a1 1 0 0 0 1 1h5" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></symbol>
+        <symbol id="i-sheet" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" ry="2" /><line x1="3" x2="21" y1="9" y2="9" /><line x1="3" x2="21" y1="15" y2="15" /><line x1="9" x2="9" y1="9" y2="21" /><line x1="15" x2="15" y1="9" y2="21" /></symbol>
+        <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3" /><path d="M3 5V19A9 3 0 0 0 21 19V5" /><path d="M3 12A9 3 0 0 0 21 12" /></symbol>
+        <symbol id="i-bar-chart-3" viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16" /><path d="M18 17V9" /><path d="M13 17V5" /><path d="M8 17v-3" /></symbol>
+        <symbol id="i-bell" viewBox="0 0 24 24"><path d="M10.268 21a2 2 0 0 0 3.464 0" /><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" /></symbol>
+        <symbol id="i-workflow" viewBox="0 0 24 24"><rect width="8" height="8" x="3" y="3" rx="2" /><path d="M7 11v4a2 2 0 0 0 2 2h4" /><rect width="8" height="8" x="13" y="13" rx="2" /></symbol>
+        <symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8" /><rect width="16" height="12" x="4" y="8" rx="2" /><path d="M2 14h2" /><path d="M20 14h2" /><path d="M15 13v2" /><path d="M9 13v2" /></symbol>
+        <symbol id="i-layout-dashboard" viewBox="0 0 24 24"><rect width="7" height="9" x="3" y="3" rx="1" /><rect width="7" height="5" x="14" y="3" rx="1" /><rect width="7" height="9" x="14" y="12" rx="1" /><rect width="7" height="5" x="3" y="16" rx="1" /></symbol>
+        <symbol id="i-plug-zap" viewBox="0 0 24 24"><path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z" /><path d="m2 22 3-3" /><path d="M7.5 13.5 10 11" /><path d="M10.5 16.5 13 14" /><path d="m18 3-4 4h6l-4 4" /></symbol>
+        <symbol id="i-monitor-smartphone" viewBox="0 0 24 24"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8" /><path d="M10 19v-3.96 3.15" /><path d="M7 19h5" /><rect width="6" height="10" x="16" y="12" rx="2" /></symbol>
+        <symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" /><path d="m21.854 2.147-10.94 10.939" /></symbol>
+        <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" /><path d="M20 2v4" /><path d="M22 4h-4" /><circle cx="4" cy="20" r="2" /></symbol>
+        <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></symbol>
+        <symbol id="i-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34" /><circle cx="11" cy="11" r="8" /></symbol>
+        <symbol id="i-pencil-ruler" viewBox="0 0 24 24"><path d="M13 7 8.7 2.7a2.41 2.41 0 0 0-3.4 0L2.7 5.3a2.41 2.41 0 0 0 0 3.4L7 13" /><path d="m8 6 2-2" /><path d="m18 16 2-2" /><path d="m17 11 4.3 4.3c.94.94.94 2.46 0 3.4l-2.6 2.6c-.94.94-2.46.94-3.4 0L11 17" /><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" /><path d="m15 5 4 4" /></symbol>
+        <symbol id="i-hammer" viewBox="0 0 24 24"><path d="m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9" /><path d="m18 15 4-4" /><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5" /></symbol>
+        <symbol id="i-trending-up" viewBox="0 0 24 24"><path d="M16 7h6v6" /><path d="m22 7-8.5 8.5-5-5L2 17" /></symbol>
+        <symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="m16 9-5.5 5.5L8 12" /></symbol>
+    </svg>
 
-    <nav class="nav-system">
-        <div class="nav-brand">
-            <img src="logo/logosemfundo.png" alt="On Floor" class="brand-glyph">
-        </div>
-        <div class="nav-status">
-            <div class="status-dot"></div>
-            <span>System Online</span>
-        </div>
-        <div class="nav-links-desktop">
-            <a href="#capabilities" class="nav-anchor">Serviços</a>
-            <a href="#portfolio" class="nav-anchor">Portfolio</a>
-            <a href="#contato" class="nav-anchor">Contato</a>
-        </div>
-        <button class="menu-trigger" id="menuTrigger" aria-label="Abrir menu" aria-expanded="false">
-            <i data-lucide="menu" id="menuIcon"></i>
+    <header class="site-nav" id="siteNav">
+        <a href="#inicio" class="nav-brand" aria-label="On Floor, início">
+            <img src="logo/onfloor-wordmark-dark.png" alt="On Floor" class="brand-logo" width="548" height="318">
+        </a>
+        <nav class="nav-links" aria-label="Navegação principal">
+            <a href="#capabilities" class="nav-link">Soluções</a>
+            <a href="#sites" class="nav-link">Projetos</a>
+            <a href="#como-trabalhamos" class="nav-link">Como trabalhamos</a>
+            <a href="#contato" class="nav-link">Contato</a>
+        </nav>
+        <a href="#contato" class="btn btn-primary btn-sm nav-cta">Agendar diagnóstico</a>
+        <button class="menu-trigger" id="menuTrigger" aria-label="Abrir menu" aria-expanded="false"
+            aria-controls="mobileDrawer">
+            <svg class="icon"><use href="#i-menu"></use></svg>
         </button>
-    </nav>
+    </header>
 
     <!-- Mobile Navigation Drawer -->
     <div class="mobile-overlay" id="mobileOverlay"></div>
     <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
         <div class="drawer-header">
-            <img src="logo/logosemfundo.png" alt="On Floor" class="brand-glyph">
+            <img src="logo/onfloor-wordmark-dark.png" alt="On Floor" class="brand-logo" width="548" height="318">
             <button class="drawer-close" id="drawerClose" aria-label="Fechar menu">
-                <i data-lucide="x"></i>
+                <svg class="icon"><use href="#i-x"></use></svg>
             </button>
         </div>
-        <nav class="drawer-nav">
-            <a href="#capabilities" class="drawer-link" data-close-drawer>Serviços <i data-lucide="arrow-right"></i></a>
-            <a href="#portfolio" class="drawer-link" data-close-drawer>Portfolio <i data-lucide="arrow-right"></i></a>
-            <a href="#contato" class="drawer-link" data-close-drawer>Contato <i data-lucide="arrow-right"></i></a>
+        <nav class="drawer-nav" aria-label="Navegação mobile">
+            <a href="#inicio" class="drawer-link" data-close-drawer>Início <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
+            <a href="#capabilities" class="drawer-link" data-close-drawer>Soluções <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
+            <a href="#sites" class="drawer-link" data-close-drawer>Projetos <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
+            <a href="#como-trabalhamos" class="drawer-link" data-close-drawer>Como trabalhamos <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
+            <a href="#contato" class="drawer-link" data-close-drawer>Contato <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
         </nav>
         <div class="drawer-cta">
-            <a href="https://wa.me/61985632400" target="_blank" class="btn-void" style="font-size:1rem;">FALAR NO
-                WHATSAPP <i data-lucide="message-circle"></i></a>
-        </div>
-        <div class="drawer-footer">
-            <span>// CNTRL. ALT. EVOLVE.</span>
+            <a href="#contato" class="btn btn-primary" data-close-drawer>Agendar diagnóstico <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
+            <a href="https://wa.me/61985632400" target="_blank" rel="noopener" class="btn btn-secondary">
+                <svg class="icon"><use href="#i-message-circle"></use></svg> Falar no WhatsApp</a>
         </div>
     </div>
 
     <main>
-        <!-- ═══════════════════════════════════════════════════
-             HERO
-             IMAGEM IDEAL: Foto aspiracional de ambiente tech,
-             dashboard futurista, ou equipe em ação.
-             Transmite: Inteligência, modernidade, confiança.
-        ═══════════════════════════════════════════════════ -->
-        <!-- HERO DESKTOP -->
-        <section class="hero-sequence hero-desktop">
-            <div class="hero-typographic">
-                <h1 class="display-massive">
-                    <span class="reveal-text">INTELLIGENCE</span><br>
-                    <span class="reveal-text highlight-matrix">AS A SERVICE.</span>
-                </h1>
+        <!-- ═══════════════ HERO ═══════════════ -->
+        <section id="inicio" class="hero">
+            <div class="hero-bg" aria-hidden="true"></div>
+
+            <div class="hero-copy">
+                <h1 class="hero-title">Tire o <span class="marker">trabalho manual</span> das costas da sua equipe.</h1>
+                <p class="hero-lead">Automações, assistentes com IA e sistemas sob medida que fazem o trabalho
+                    repetitivo sozinhos, para sua empresa atender, vender e crescer com mais eficiência.</p>
+                <div class="hero-actions">
+                    <a href="#contato" class="btn btn-primary btn-lg">Quero melhorar minha operação <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
+                    <a href="#sites" class="btn btn-ghost btn-lg">Ver projetos</a>
+                </div>
+                <ul class="hero-trust">
+                    <li><svg class="icon"><use href="#i-check"></use></svg> Conversa sem termos técnicos</li>
+                    <li><svg class="icon"><use href="#i-check"></use></svg> Projetos sob medida</li>
+                    <li><svg class="icon"><use href="#i-check"></use></svg> Acompanhamento depois da entrega</li>
+                </ul>
             </div>
 
-            <div class="hero-metrics">
-                <p class="hero-manifesto reveal-text slow">A On Floor transforma operações comuns em sistemas
-                    inteligentes. Agentes, automações e sistemas desenhados para o seu negócio crescer sem limite
-                    humano.</p>
-                <a href="#contato" class="btn-void">AGENDAR DIAGNÓSTICO <i data-lucide="arrow-right"></i></a>
-            </div>
+            <!-- Demonstração animada: tarefas chegam, a On Floor processa, o trabalho sai pronto -->
+            <div class="flow" id="heroFlow" role="img"
+                aria-label="Exemplo de automação: uma mensagem no WhatsApp, um formulário do site e uma planilha passam pela On Floor e viram pedido cadastrado, cliente respondido e relatório atualizado, sem trabalho manual.">
+                <div class="flow-window">
+                    <div class="flow-bar" aria-hidden="true">
+                        <span class="dots"><i></i><i></i><i></i></span>
+                        <span class="flow-bar-title">Operação da sua empresa</span>
+                        <span class="flow-bar-badge"><i></i> Exemplo</span>
+                    </div>
 
-            <div class="visual-anchor">
-                <div class="hero-image-frame">
-                    <img src="/images/equipe.jpg" alt="On Floor em ação" class="hero-full-img">
-                    <div class="target-crosshair hero-placeholder">
-                        <i data-lucide="focus"></i>
-                        <span>KEY VISUAL — Foto aspiracional / Equipe / Dashboard</span>
+                    <div class="flow-stage" aria-hidden="true">
+                        <svg class="flow-lines" id="flowLines"></svg>
+
+                        <div class="flow-col flow-in">
+                            <p class="flow-label">Chega</p>
+                            <div class="flow-node" data-in="0">
+                                <span class="flow-ico ico-green"><svg class="icon"><use href="#i-message-circle"></use></svg></span>
+                                <span class="flow-txt"><strong>WhatsApp</strong><small>“Quero fazer um pedido”</small></span>
+                            </div>
+                            <div class="flow-node" data-in="1">
+                                <span class="flow-ico ico-blue"><svg class="icon"><use href="#i-file-text"></use></svg></span>
+                                <span class="flow-txt"><strong>Formulário do site</strong><small>Pedido de orçamento</small></span>
+                            </div>
+                            <div class="flow-node" data-in="2">
+                                <span class="flow-ico ico-amber"><svg class="icon"><use href="#i-sheet"></use></svg></span>
+                                <span class="flow-txt"><strong>Planilha</strong><small>Vendas do dia</small></span>
+                            </div>
+                        </div>
+
+                        <div class="flow-core">
+                            <span class="core-ring"></span>
+                            <span class="core-ring core-ring--2"></span>
+                            <span class="core-btn"><img src="logo/glyph-white.png" alt="" width="120" height="120"></span>
+                            <span class="core-label">On Floor</span>
+                        </div>
+
+                        <div class="flow-col flow-out">
+                            <p class="flow-label">Sai pronto</p>
+                            <div class="flow-node" data-out="0">
+                                <span class="flow-ico"><svg class="icon"><use href="#i-database"></use></svg></span>
+                                <span class="flow-txt"><strong>Pedido no sistema</strong><small>Cadastrado sozinho</small></span>
+                                <span class="flow-check"><svg class="icon"><use href="#i-check"></use></svg></span>
+                            </div>
+                            <div class="flow-node" data-out="1">
+                                <span class="flow-ico"><svg class="icon"><use href="#i-send"></use></svg></span>
+                                <span class="flow-txt"><strong>Cliente respondido</strong><small>Na hora, com IA</small></span>
+                                <span class="flow-check"><svg class="icon"><use href="#i-check"></use></svg></span>
+                            </div>
+                            <div class="flow-node" data-out="2">
+                                <span class="flow-ico"><svg class="icon"><use href="#i-bar-chart-3"></use></svg></span>
+                                <span class="flow-txt"><strong>Relatório</strong><small>Atualizado e enviado</small></span>
+                                <span class="flow-check"><svg class="icon"><use href="#i-check"></use></svg></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-feed" aria-hidden="true">
+                        <svg class="icon"><use href="#i-sparkles"></use></svg>
+                        <span id="flowFeed">Mensagem do WhatsApp virou pedido no sistema</span>
+                        <em>sem ninguém digitar nada</em>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- HERO MOBILE -->
-        <section class="hero-mobile">
-            <div class="hero-mobile-bg">
-                <img src="images/equipe.jpg" alt="On Floor em ação" class="hero-mobile-img">
-                <div class="hero-mobile-overlay"></div>
-            </div>
-            <div class="hero-mobile-content">
-                <div class="hero-mobile-badge">
-                    <div class="status-dot"></div>
-                    <span>COGNITIVE INFRASTRUCTURE</span>
-                </div>
-                <h1 class="hero-mobile-title">
-                    <span class="reveal-text">INTELLIGENCE</span><br>
-                    <span class="reveal-text highlight-matrix">AS A SERVICE.</span>
-                </h1>
-                <p class="hero-mobile-text reveal-text slow">Agentes, automações e sistemas desenhados para o seu
-                    negócio crescer sem limite humano.</p>
-                <div class="hero-mobile-actions">
-                    <a href="#contato" class="btn-mobile-primary">AGENDAR DIAGNÓSTICO <i
-                            data-lucide="arrow-right"></i></a>
-                    <a href="#capabilities" class="btn-mobile-ghost">VER SERVIÇOS</a>
-                </div>
-                <div class="hero-mobile-scroll">
-                    <i data-lucide="chevrons-down"></i>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════════════════════════════════
-             CAPABILITIES
-        ═══════════════════════════════════════════════════ -->
-        <section id="capabilities" class="capabilities-matrix">
-            <h2 class="section-title">CAPABILITIES</h2>
-            <div class="capability-grid">
-                <div class="matrix-card">
-                    <div class="card-indicator">01</div>
-                    <h3>Soluções de IA</h3>
-                    <p>Aplicabilidades customizadas de inteligência artificial desenhadas para injetar eficiência e
-                        resolver obstáculos complexos da sua operação.</p>
-                </div>
-                <div class="matrix-card">
-                    <div class="card-indicator">02</div>
-                    <h3>Agentes de IA</h3>
-                    <p>Atendentes, vendedores e backoffice autônomos que operam 24/7 de maneira sênior, fluente e
-                        perfeitamente integrada aos seus dados.</p>
-                </div>
-                <div class="matrix-card">
-                    <div class="card-indicator">03</div>
-                    <h3>Sistemas</h3>
-                    <p>Construção de plataformas robustas sob medida. Desenvolvemos com as tecnologias mais escaláveis
-                        para suportar alta demanda.</p>
-                </div>
-                <div class="matrix-card">
-                    <div class="card-indicator">04</div>
-                    <h3>Landing Pages</h3>
-                    <p>Páginas de altíssima conversão focadas na percepção de valor extrema. Não construímos sites,
-                        forjamos ferramentas de venda.</p>
-                </div>
-                <div class="matrix-card">
-                    <div class="card-indicator">05</div>
-                    <h3>Automações Internas</h3>
-                    <p>Criação de fluxos complexos e invisíveis que eliminam o trabalho manual repetitivo da sua equipe
-                        com ferramentas modernas.</p>
-                </div>
-                <div class="matrix-card matrix-card--cta">
-                    <div class="card-indicator">// STATUS: READY_TO_DEPLOY</div>
-                    <h3>Descubra o potencial escondido da sua empresa.</h3>
-                    <br>
-                    <a href="#contato" class="btn-void" style="font-size: 1rem;">FALAR COM TIME COMERCIAL <i
-                            data-lucide="arrow-right"></i></a>
-                </div>
+        <!-- ═══════════════ PROVA SOCIAL — empresas reais atendidas ═══════════════ -->
+        <section class="clients" aria-labelledby="clients-title">
+            <h2 id="clients-title" class="clients-title">Empresas que já confiam na On Floor</h2>
+            <div class="clients-marquee">
+            <ul class="clients-track">
+                <li>
+                    <a href="https://techlardf.com.br" target="_blank" rel="noopener" class="client">
+                        <img src="images/clientes/techlar.png" alt="Techlar" width="270" height="120" loading="lazy">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://axxiscontabilidade.com.br" target="_blank" rel="noopener" class="client">
+                        <img src="images/clientes/axxis-contabilidade.png" alt="Axxis Contabilidade" width="136" height="49" loading="lazy">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://pergotech.com.br" target="_blank" rel="noopener" class="client">
+                        <img src="images/clientes/pergotech.png" alt="Pergotech" width="540" height="119" loading="lazy">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://axxiscontabilidadedigital.com.br" target="_blank" rel="noopener" class="client">
+                        <img src="images/clientes/axxis-digital.png" alt="Axxis Contabilidade Digital" width="340" height="120" loading="lazy">
+                    </a>
+                </li>
+            </ul>
             </div>
         </section>
 
-        <!-- ═══════════════════════════════════════════════════
-             PORTFOLIO / CASES
-             Esta section substitui "Visão Absoluta".
-             
-             IMAGENS IDEAIS:
-             → Card 1 (grande): Screenshot de um agente funcionando
-               Ex: interface do WhatsApp com o agente respondendo,
-               ou tela de um chatbot em operação real.
-             → Card 2: Print de um flow no n8n ou sistema de automação.
-               Mostre a complexidade visual do trabalho.
-             → Card 3: Screenshot de uma landing page entregue
-               (antes/depois ou versão desktop de um projeto real).
-             → Card 4 (placeholder para mais): Print de dashboard ou
-               sistema web que vocês desenvolveram.
-        ═══════════════════════════════════════════════════ -->
-        <section id="portfolio" class="portfolio-section">
-            <div class="portfolio-header">
-                <h2 class="section-title">PORTFOLIO</h2>
-                <p class="portfolio-subtitle">Casos reais. Resultados comprovados.</p>
+        <!-- ═══════════════ PROBLEMAS — hoje × com a On Floor ═══════════════ -->
+        <section id="problemas" class="section">
+            <div class="section-head section-head--center">
+                <p class="eyebrow">O dia a dia de muitas empresas</p>
+                <h2 class="section-heading">Sua empresa ainda depende disso?</h2>
             </div>
 
-            <div class="portfolio-grid">
+            <div class="compare">
+                <div class="compare-head" aria-hidden="true">
+                    <span>Hoje</span>
+                    <span></span>
+                    <span>Com a On Floor</span>
+                </div>
+                <ul class="compare-list">
+                    <li class="compare-row">
+                        <span class="before">Copiar pedidos do WhatsApp para a planilha</span>
+                        <span class="compare-arrow"><svg class="icon"><use href="#i-arrow-right"></use></svg></span>
+                        <span class="after"><svg class="icon"><use href="#i-circle-check"></use></svg> O pedido entra no sistema sozinho</span>
+                    </li>
+                    <li class="compare-row">
+                        <span class="before">Responder as mesmas perguntas o dia todo</span>
+                        <span class="compare-arrow"><svg class="icon"><use href="#i-arrow-right"></use></svg></span>
+                        <span class="after"><svg class="icon"><use href="#i-circle-check"></use></svg> Um assistente responde na hora</span>
+                    </li>
+                    <li class="compare-row">
+                        <span class="before">Controlar processos em planilhas soltas</span>
+                        <span class="compare-arrow"><svg class="icon"><use href="#i-arrow-right"></use></svg></span>
+                        <span class="after"><svg class="icon"><use href="#i-circle-check"></use></svg> Tudo em um sistema, num só lugar</span>
+                    </li>
+                    <li class="compare-row">
+                        <span class="before">Cadastrar a mesma informação várias vezes</span>
+                        <span class="compare-arrow"><svg class="icon"><use href="#i-arrow-right"></use></svg></span>
+                        <span class="after"><svg class="icon"><use href="#i-circle-check"></use></svg> Cadastra uma vez, aparece em todo lugar</span>
+                    </li>
+                    <li class="compare-row">
+                        <span class="before">Cobrar e acompanhar tarefas uma a uma</span>
+                        <span class="compare-arrow"><svg class="icon"><use href="#i-arrow-right"></use></svg></span>
+                        <span class="after"><svg class="icon"><use href="#i-circle-check"></use></svg> Lembretes e acompanhamento automáticos</span>
+                    </li>
+                </ul>
+            </div>
 
-                <!-- Case 01 — GRANDE span 2 cols -->
-                <a href="https://assistentelara.onfloor.com.br" class="portfolio-case case-large case-link">
-                    <div class="case-bg">
-                        <div class="case-bg-placeholder">
-                            <i data-lucide="bot"></i>
-                            <img src="images/larapage.png" alt="Agente de IA">
-                            <span>AGENTE EM OPERAÇÃO</span>
-                        </div>
-                    </div>
-                    <div class="case-label-strip">
-                        <span class="case-tag">Agente de IA</span>
-                        <h3 class="case-label-title">Atendimento Autônomo</h3>
-                        <span class="case-hint">Passe o mouse para ver <i data-lucide="arrow-up"></i></span>
-                    </div>
-                    <div class="case-reveal-panel">
-                        <span class="case-tag">Agente de IA</span>
-                        <h3>Atendimento Autônomo</h3>
-                        <p>Agente inteligente com memória de contexto integrado ao CRM do cliente, reduzindo 80% do
-                            volume humano de suporte.</p>
-                        <span class="case-cta-link">Quero essa solução <i data-lucide="arrow-right"></i></span>
-                    </div>
-                </a>
-
-                <!-- Case 02 -->
-                <a href="#contato" class="portfolio-case case-link">
-                    <div class="case-bg">
-                        <div class="case-bg-placeholder">
-                            <i data-lucide="workflow"></i>
-                            <img src="images/fluxo.png" alt="Automação">
-                            <span>FLOW DE AUTOMAÇÃO</span>
-                        </div>
-                    </div>
-                    <div class="case-label-strip">
-                        <span class="case-tag">Automação</span>
-                        <h3 class="case-label-title">Pipeline Interno</h3>
-                        <span class="case-hint">Passe o mouse para ver <i data-lucide="arrow-up"></i></span>
-                    </div>
-                    <div class="case-reveal-panel">
-                        <span class="case-tag">Automação</span>
-                        <h3>Pipeline Interno</h3>
-                        <p>Fluxo de automação que eliminou 40h/mês de trabalho manual da equipe comercial.</p>
-                        <span class="case-cta-link">Quero essa solução <i data-lucide="arrow-right"></i></span>
-                    </div>
-                </a>
-
-                <!-- Case 03 -->
-                <a href="#contato" class="portfolio-case case-link">
-                    <div class="case-bg">
-                        <div class="case-bg-placeholder">
-                            <i data-lucide="layout"></i>
-                            <img src="images/lp.png" alt="Automação">
-                            <span>LANDING PAGE</span>
-                        </div>
-                    </div>
-                    <div class="case-label-strip">
-                        <span class="case-tag">Landing Page</span>
-                        <h3 class="case-label-title">Conversão Cirúrgica</h3>
-                        <span class="case-hint">Passe o mouse para ver <i data-lucide="arrow-up"></i></span>
-                    </div>
-                    <div class="case-reveal-panel">
-                        <span class="case-tag">Landing Page</span>
-                        <h3>Conversão Cirúrgica</h3>
-                        <p>LP desenvolvida com foco em CRO, elevando a taxa de conversão de 2% para 8.3% em 30 dias.</p>
-                        <span class="case-cta-link">Quero essa solução <i data-lucide="arrow-right"></i></span>
-                    </div>
-                </a>
-
-                <!-- Case 04 -->
-                <a href="#contato" class="portfolio-case case-link">
-                    <div class="case-bg">
-                        <div class="case-bg-placeholder">
-                            <i data-lucide="monitor"></i>
-                            <img src="images/sistemainterno.png" alt="Sistema Customizado">
-                            <span>SISTEMA WEB</span>
-                        </div>
-                    </div>
-                    <div class="case-label-strip">
-                        <span class="case-tag">Sistema</span>
-                        <h3 class="case-label-title">Plataforma Customizada</h3>
-                        <span class="case-hint">Passe o mouse para ver <i data-lucide="arrow-up"></i></span>
-                    </div>
-                    <div class="case-reveal-panel">
-                        <span class="case-tag">Sistema</span>
-                        <h3>Plataforma Customizada</h3>
-                        <p>Sistema completo de gestão, do zero ao deploy, entregue em 45 dias com alta disponibilidade.
-                        </p>
-                        <span class="case-cta-link">Quero essa solução <i data-lucide="arrow-right"></i></span>
-                    </div>
-                </a>
-
+            <div class="section-cta">
+                <p>Provavelmente existe uma forma melhor de fazer isso.</p>
+                <a href="#contato" class="btn btn-primary">Descobrir o que posso automatizar <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
             </div>
         </section>
 
-        <!-- ═══════════════════════════════════════════════════
-             CONTATO / CTA FINAL
-        ═══════════════════════════════════════════════════ -->
-        <section id="contato" class="contact-section">
-            <div class="contact-inner">
-                <div class="contact-label">// INICIAR PROJETO</div>
-                <h2 class="display-massive" style="font-size: clamp(2.5rem, 7vw, 7rem);">PRONTO PARA<br><span
-                        class="highlight-matrix">EVOLUIR?</span></h2>
-                <p>Agende um diagnóstico gratuito de 30 minutos com nosso time técnico e descubra quais soluções se
-                    encaixam no seu negócio.</p>
-                <div class="contact-actions">
-                    <a href="https://wa.me/61985632400" target="_blank" class="btn-void massive-cta">FALAR NO WHATSAPP
-                        <i data-lucide="message-circle"></i></a>
-                    <a href="mailto:onfloor@gmail.com" class="contact-email">onfloor@gmail.com</a>
+        <!-- ═══════════════ SOLUÇÕES — bento (id mantido para links antigos) ═══════════════ -->
+        <section id="capabilities" class="section section-soft">
+            <div class="section-head">
+                <p class="eyebrow">Soluções</p>
+                <h2 class="section-heading">Começamos pelo problema.<br>A tecnologia vem depois.</h2>
+            </div>
+
+            <div class="bento">
+                <article class="bento-card bento-card--wide">
+                    <div class="bento-visual viz-flow" aria-hidden="true">
+                        <span class="viz-step"><svg class="icon"><use href="#i-message-circle"></use></svg> Pedido recebido</span>
+                        <span class="viz-link"></span>
+                        <span class="viz-step"><svg class="icon"><use href="#i-sheet"></use></svg> Planilha</span>
+                        <span class="viz-link"></span>
+                        <span class="viz-step viz-step--done"><svg class="icon"><use href="#i-mail"></use></svg> E-mail enviado</span>
+                    </div>
+                    <span class="bento-tag"><svg class="icon"><use href="#i-workflow"></use></svg> Automações</span>
+                    <h3>Automatize processos repetitivos.</h3>
+                    <p>O que alguém faz na mão todo dia passa a acontecer sozinho.</p>
+                </article>
+
+                <article class="bento-card bento-card--wide">
+                    <div class="bento-visual viz-chat" aria-hidden="true">
+                        <span class="bubble bubble--in">Vocês abrem no sábado?</span>
+                        <span class="bubble bubble--out">Abrimos, sim! Quer que eu reserve um horário?</span>
+                    </div>
+                    <span class="bento-tag"><svg class="icon"><use href="#i-bot"></use></svg> Assistentes com IA</span>
+                    <h3>Atenda clientes com inteligência artificial.</h3>
+                    <p>Um assistente que conversa, consulta informações e resolve pedidos.</p>
+                </article>
+
+                <article class="bento-card">
+                    <div class="bento-visual viz-table" aria-hidden="true">
+                        <span><i></i><b class="st st--ok">Entregue</b></span>
+                        <span><i></i><b class="st st--wip">Em rota</b></span>
+                        <span><i></i><b class="st st--new">Novo</b></span>
+                    </div>
+                    <span class="bento-tag"><svg class="icon"><use href="#i-layout-dashboard"></use></svg> Sistemas</span>
+                    <h3>Tire processos das planilhas.</h3>
+                    <p>Um sistema do jeito que sua empresa trabalha.</p>
+                </article>
+
+                <article class="bento-card">
+                    <div class="bento-visual viz-hub" aria-hidden="true">
+                        <span class="hub-dot"><svg class="icon"><use href="#i-sheet"></use></svg></span>
+                        <span class="hub-dot"><svg class="icon"><use href="#i-mail"></use></svg></span>
+                        <span class="hub-center"><svg class="icon"><use href="#i-plug-zap"></use></svg></span>
+                        <span class="hub-dot"><svg class="icon"><use href="#i-message-circle"></use></svg></span>
+                        <span class="hub-dot"><svg class="icon"><use href="#i-database"></use></svg></span>
+                    </div>
+                    <span class="bento-tag"><svg class="icon"><use href="#i-plug-zap"></use></svg> Integrações</span>
+                    <h3>Faça seus programas conversarem.</h3>
+                    <p>A informação circula sozinha entre as ferramentas.</p>
+                </article>
+
+                <article class="bento-card">
+                    <div class="bento-visual viz-site" aria-hidden="true">
+                        <span class="site-bar"><i></i><i></i><i></i></span>
+                        <span class="site-line site-line--lg"></span>
+                        <span class="site-line"></span>
+                        <span class="site-btn">Pedir orçamento</span>
+                    </div>
+                    <span class="bento-tag"><svg class="icon"><use href="#i-monitor-smartphone"></use></svg> Sites e páginas</span>
+                    <h3>Presença digital que gera contatos.</h3>
+                    <p>Sites que explicam o que você faz e trazem clientes.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ═══════════════ SITES QUE CRIAMOS — vitrine com abas ═══════════════ -->
+        <section id="sites" class="section showcase" aria-labelledby="sites-title">
+            <span id="portfolio" aria-hidden="true"></span>
+            <div class="section-head section-head--center">
+                <p class="eyebrow">Sites criados pela On Floor: Techlar, Axxis Contabilidade, Pergotech e Axxis Contabilidade Digital</p>
+                <h2 id="sites-title" class="section-heading">Alguns dos sites que já colocamos no ar.</h2>
+            </div>
+
+            <div class="showcase-tabs" role="tablist" aria-label="Sites">
+                <button class="showcase-tab is-active" role="tab" id="st-techlar" aria-controls="sp-techlar" aria-selected="true">Techlar<span class="tab-progress"></span></button>
+                <button class="showcase-tab" role="tab" id="st-axxis" aria-controls="sp-axxis" aria-selected="false" tabindex="-1">Axxis Contabilidade<span class="tab-progress"></span></button>
+                <button class="showcase-tab" role="tab" id="st-pergotech" aria-controls="sp-pergotech" aria-selected="false" tabindex="-1">Pergotech<span class="tab-progress"></span></button>
+                <button class="showcase-tab" role="tab" id="st-axxis-digital" aria-controls="sp-axxis-digital" aria-selected="false" tabindex="-1">Axxis Digital<span class="tab-progress"></span></button>
+            </div>
+
+            <div class="showcase-panels">
+                <!-- Techlar -->
+                <article class="showcase-panel is-active" role="tabpanel" id="sp-techlar" aria-labelledby="st-techlar">
+                    <div class="showcase-copy">
+                        <h3>Techlar</h3>
+                        <p>Soluções arquitetônicas premium apresentadas com clareza.</p>
+                        <ul class="chip-list">
+                            <li>Catálogo</li>
+                            <li>Galeria de projetos</li>
+                            <li>Pedido de orçamento</li>
+                        </ul>
+                        <a href="https://techlardf.com.br" target="_blank" rel="noopener" class="btn btn-primary">Ver site <svg class="icon"><use href="#i-arrow-up-right"></use></svg></a>
+                    </div>
+                    <div class="showcase-mockup">
+                        <div class="browser-frame">
+                            <div class="browser-bar" aria-hidden="true">
+                                <span class="dots"><i></i><i></i><i></i></span>
+                                <span class="browser-url">techlardf.com.br</span>
+                            </div>
+                            <img src="images/techlar-desktop.webp" width="1440" height="900" loading="lazy" decoding="async"
+                                alt="Página inicial do site da Techlar no computador, com coberturas retráteis e o título “Faça chuva ou faça sol, a escolha é sua.”">
+                        </div>
+                        <div class="phone-frame">
+                            <img src="images/techlar-mobile.webp" width="780" height="1688" loading="lazy" decoding="async"
+                                alt="Site da Techlar em um celular">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Axxis Contabilidade -->
+                <article class="showcase-panel" role="tabpanel" id="sp-axxis" aria-labelledby="st-axxis" hidden>
+                    <div class="showcase-copy">
+                        <h3>Axxis Contabilidade</h3>
+                        <p>Contabilidade consultiva com posicionamento forte e proposta a um clique.</p>
+                        <ul class="chip-list">
+                            <li>Site institucional</li>
+                            <li>Áreas de atuação</li>
+                            <li>Pedido de proposta</li>
+                        </ul>
+                        <a href="https://axxiscontabilidade.com.br" target="_blank" rel="noopener" class="btn btn-primary">Ver site <svg class="icon"><use href="#i-arrow-up-right"></use></svg></a>
+                    </div>
+                    <div class="showcase-mockup">
+                        <div class="browser-frame">
+                            <div class="browser-bar" aria-hidden="true">
+                                <span class="dots"><i></i><i></i><i></i></span>
+                                <span class="browser-url">axxiscontabilidade.com.br</span>
+                            </div>
+                            <img src="images/axxis-contabilidade-desktop.webp" width="1440" height="900" loading="lazy" decoding="async"
+                                alt="Página inicial do site da Axxis Contabilidade no computador, com o título “Contabilidade consultiva para acelerar o crescimento da sua empresa”">
+                        </div>
+                        <div class="phone-frame">
+                            <img src="images/axxis-contabilidade-mobile.webp" width="780" height="1688" loading="lazy" decoding="async"
+                                alt="Site da Axxis Contabilidade em um celular">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Pergotech -->
+                <article class="showcase-panel" role="tabpanel" id="sp-pergotech" aria-labelledby="st-pergotech" hidden>
+                    <div class="showcase-copy">
+                        <h3>Pergotech</h3>
+                        <p>Indústria de coberturas metálicas com um site que valoriza a fábrica e atrai revendas.</p>
+                        <ul class="chip-list">
+                            <li>Site institucional</li>
+                            <li>Processo de fabricação</li>
+                            <li>Área de revenda</li>
+                        </ul>
+                        <a href="https://pergotech.com.br" target="_blank" rel="noopener" class="btn btn-primary">Ver site <svg class="icon"><use href="#i-arrow-up-right"></use></svg></a>
+                    </div>
+                    <div class="showcase-mockup">
+                        <div class="browser-frame">
+                            <div class="browser-bar" aria-hidden="true">
+                                <span class="dots"><i></i><i></i><i></i></span>
+                                <span class="browser-url">pergotech.com.br</span>
+                            </div>
+                            <img src="images/pergotech-desktop.webp" width="1440" height="900" loading="lazy" decoding="async"
+                                alt="Página inicial do site da Pergotech no computador, com o título “O topo do seu projeto nasce na nossa fábrica.”">
+                        </div>
+                        <div class="phone-frame">
+                            <img src="images/pergotech-mobile.webp" width="780" height="1688" loading="lazy" decoding="async"
+                                alt="Site da Pergotech em um celular">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Axxis Contabilidade Digital -->
+                <article class="showcase-panel" role="tabpanel" id="sp-axxis-digital" aria-labelledby="st-axxis-digital" hidden>
+                    <div class="showcase-copy">
+                        <h3>Axxis Contabilidade Digital</h3>
+                        <p>Contabilidade digital explicada de forma simples, com planos e contato rápido.</p>
+                        <ul class="chip-list">
+                            <li>Planos</li>
+                            <li>Segmentos</li>
+                            <li>Falar com especialista</li>
+                        </ul>
+                        <a href="https://axxiscontabilidadedigital.com.br" target="_blank" rel="noopener" class="btn btn-primary">Ver site <svg class="icon"><use href="#i-arrow-up-right"></use></svg></a>
+                    </div>
+                    <div class="showcase-mockup">
+                        <div class="browser-frame">
+                            <div class="browser-bar" aria-hidden="true">
+                                <span class="dots"><i></i><i></i><i></i></span>
+                                <span class="browser-url">axxiscontabilidadedigital.com.br</span>
+                            </div>
+                            <img src="images/axxis-digital-desktop.webp" width="1440" height="900" loading="lazy" decoding="async"
+                                alt="Página inicial do site da Axxis Contabilidade Digital no computador, com o título “Menos burocracia. Mais visão para decidir.”">
+                        </div>
+                        <div class="phone-frame">
+                            <img src="images/axxis-digital-mobile.webp" width="780" height="1688" loading="lazy" decoding="async"
+                                alt="Site da Axxis Contabilidade Digital em um celular">
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ═══════════════ COMO TRABALHAMOS ═══════════════ -->
+        <section id="como-trabalhamos" class="section">
+            <div class="section-head section-head--center">
+                <p class="eyebrow">Como trabalhamos</p>
+                <h2 class="section-heading">Da operação à solução.</h2>
+            </div>
+
+            <ol class="steps">
+                <li class="step">
+                    <span class="step-ico"><svg class="icon"><use href="#i-search"></use></svg></span>
+                    <span class="step-num">01</span>
+                    <h3>Entendemos</h3>
+                    <p>Mapeamos a operação e os gargalos.</p>
+                </li>
+                <li class="step">
+                    <span class="step-ico"><svg class="icon"><use href="#i-pencil-ruler"></use></svg></span>
+                    <span class="step-num">02</span>
+                    <h3>Projetamos</h3>
+                    <p>Definimos a solução e as integrações.</p>
+                </li>
+                <li class="step">
+                    <span class="step-ico"><svg class="icon"><use href="#i-hammer"></use></svg></span>
+                    <span class="step-num">03</span>
+                    <h3>Construímos</h3>
+                    <p>Desenvolvemos, integramos e testamos.</p>
+                </li>
+                <li class="step">
+                    <span class="step-ico"><svg class="icon"><use href="#i-trending-up"></use></svg></span>
+                    <span class="step-num">04</span>
+                    <h3>Evoluímos</h3>
+                    <p>Melhoramos conforme a empresa cresce.</p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- ═══════════════ DEPOIMENTOS (preencher com falas reais e autorizadas, depois descomentar)
+        <section id="depoimentos" class="section section-soft">
+            <div class="section-head section-head--center">
+                <h2 class="section-heading">O que dizem nossos clientes.</h2>
+            </div>
+            <div class="testimonials">
+                <figure class="testimonial">
+                    <blockquote>“Fala real do cliente aqui.”</blockquote>
+                    <figcaption><img src="images/clientes/techlar.png" alt="" width="270" height="120"><span><strong>Nome da pessoa</strong>Cargo, Techlar</span></figcaption>
+                </figure>
+            </div>
+        </section>
+        ═══════════════ -->
+
+        <!-- ═══════════════ CTA FINAL / DIAGNÓSTICO ═══════════════ -->
+        <section id="contato" class="section contact-section">
+            <div class="contact-panel">
+                <div class="contact-copy">
+                    <p class="eyebrow eyebrow-light">Diagnóstico</p>
+                    <h2 class="contact-title">Existe algum processo na sua empresa que deveria funcionar melhor?</h2>
+                    <p>Em uma conversa rápida, entendemos sua operação e mostramos onde automação, IA ou um sistema
+                        podem ajudar.</p>
+                    <div class="contact-actions">
+                        <a href="https://wa.me/61985632400" target="_blank" rel="noopener" class="contact-direct">
+                            <svg class="icon"><use href="#i-message-circle"></use></svg> (61) 98563-2400</a>
+                        <a href="mailto:onfloor.ai@gmail.com" class="contact-direct">
+                            <svg class="icon"><use href="#i-mail"></use></svg> onfloor.ai@gmail.com</a>
+                    </div>
                 </div>
+
+                <form class="contact-form" id="diagnosticForm">
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="f-nome">Nome</label>
+                            <input id="f-nome" name="nome" type="text" autocomplete="name" required>
+                        </div>
+                        <div class="field">
+                            <label for="f-empresa">Empresa</label>
+                            <input id="f-empresa" name="empresa" type="text" autocomplete="organization" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="f-whatsapp">WhatsApp</label>
+                        <input id="f-whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel"
+                            placeholder="(00) 00000-0000" required>
+                    </div>
+                    <div class="field">
+                        <label for="f-mensagem">O que você gostaria de melhorar?</label>
+                        <textarea id="f-mensagem" name="mensagem" rows="2"
+                            placeholder="Ex.: controlamos os pedidos em planilhas…"></textarea>
+                    </div>
+                    <!-- Armadilha para robôs: escondido de pessoas, deve chegar vazio -->
+                    <div class="hp-field" aria-hidden="true">
+                        <label for="f-website">Site</label>
+                        <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg">Agendar diagnóstico <svg class="icon"><use href="#i-send"></use></svg></button>
+                    <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+                    <p class="form-note">Registramos seu contato e abrimos uma conversa no WhatsApp para agilizar.</p>
+                </form>
             </div>
         </section>
     </main>
 
-    <footer class="system-footer">
-        <div class="footer-data">
-            <img src="logo/onfloorwhite.png" alt="On Floor" class="footer-logo">
-            <span>Inteligência Artificial para resultados reais.</span>
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <img src="logo/onfloor-wordmark-white.png" alt="On Floor" class="footer-logo" width="548" height="318"
+                    loading="lazy">
+                <p>Tecnologia para empresas que querem operar melhor.</p>
+            </div>
+            <nav class="footer-links" aria-label="Rodapé">
+                <a href="#capabilities">Soluções</a>
+                <a href="#sites">Projetos</a>
+                <a href="#como-trabalhamos">Como trabalhamos</a>
+                <a href="#contato">Contato</a>
+            </nav>
         </div>
         <div class="footer-meta">
-            <span>&copy;
-                <script>document.write(new Date().getFullYear())</script> On Floor. Todos os direitos reservados.
-            </span>
-            <span>CNTRL. ALT. EVOLVE.</span>
+            <span>&copy; <span id="year">2026</span> On Floor. Todos os direitos reservados.</span>
+            <a href="mailto:onfloor.ai@gmail.com">onfloor.ai@gmail.com</a>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Botão flutuante de WhatsApp -->
+    <a href="https://wa.me/61985632400" target="_blank" rel="noopener" class="wa-float" aria-label="Falar no WhatsApp">
+        <svg class="icon"><use href="#i-message-circle"></use></svg>
+    </a>
+
+    <script src="script.js" defer></script>
 </body>
 
 </html>

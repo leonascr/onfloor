@@ -1,0 +1,10 @@
+# O Dockerfile copia a pasta inteira para o nginx (conteúdo público).
+# Nada abaixo deve ser servido pelo site.
+.git
+.gitignore
+.dockerignore
+Dockerfile
+.mcp.json
+.claude
+.vscode
+*.md
