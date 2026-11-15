@@ -2431,129 +2431,514 @@ textarea:focus-visible {
     }
 }
 
-/* ═══════════════ SERVIÇOS — leque completo ═══════════════ */
+/* ═══════════════ SERVIÇOS — jornada do cliente ═══════════════ */
 .servicos-lead {
     margin-top: 0.9rem;
     color: var(--muted);
     font-size: 1.08rem;
 }
 
-.servicos {
+/* linha que liga as etapas */
+.jornada {
+    position: relative;
+    list-style: none;
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1rem;
+    gap: clamp(2.5rem, 6vw, 4.5rem);
 }
 
-.servico {
-    display: flex;
-    flex-direction: column;
-    padding: 1.6rem 1.4rem;
-    border-radius: var(--radius-lg);
+.jornada::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 1rem;
+    bottom: 1rem;
+    width: 2px;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, transparent, var(--brand-300) 8%, var(--brand) 50%, var(--brand-300) 92%, transparent);
+    opacity: 0.45;
+}
+
+.etapa {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: center;
+}
+
+/* ponto na linha */
+.etapa::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
     background: #fff;
+    border: 4px solid var(--brand);
+    box-shadow: 0 0 0 6px var(--brand-100);
+    z-index: 1;
+}
+
+.etapa:nth-child(even) .etapa-texto {
+    order: 2;
+}
+
+.etapa-num {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 4.6rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    background: linear-gradient(135deg, #c455fb, #4a0b8f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0.9;
+}
+
+.etapa h3 {
+    margin-top: 0.4rem;
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 800;
+}
+
+.etapa-ganho {
+    margin-top: 0.5rem;
+    font-size: 1.12rem;
+    color: var(--ink);
+    max-width: 30rem;
+}
+
+/* serviços em linha corrida, separados por pontinhos (não é lista de cards) */
+.etapa-lista {
+    margin-top: 1rem;
+    color: var(--muted);
+    font-size: 0.98rem;
+    line-height: 1.9;
+    max-width: 30rem;
+}
+
+.etapa-lista i {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    margin: 0 0.55rem 0.18rem;
+    border-radius: 50%;
+    background: var(--brand-300);
+    vertical-align: middle;
+}
+
+/* cenas: mini telas mostrando o serviço funcionando */
+.etapa-cena {
+    position: relative;
+    padding: 1.25rem;
+    border-radius: var(--radius-lg);
+    background: var(--bg-soft);
+    background-image: radial-gradient(circle, rgba(114, 22, 211, 0.1) 1px, transparent 1.5px);
+    background-size: 16px 16px;
     border: 1px solid var(--line);
-    transition: transform 0.35s var(--ease-out), box-shadow 0.35s ease, border-color 0.35s ease;
+    box-shadow: var(--shadow-sm);
+    transform: rotate(-1.2deg);
+    transition: transform 0.5s var(--ease-out);
 }
 
-.servico:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow);
-    border-color: transparent;
+.etapa:nth-child(even) .etapa-cena {
+    transform: rotate(1.2deg);
 }
 
-.servico-ico {
+.etapa:hover .etapa-cena {
+    transform: rotate(0) translateY(-4px);
+}
+
+/* 01 feed */
+.cena-feed {
+    max-width: 360px;
+    justify-self: center;
+    background: #fff;
+}
+
+.feed-topo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.9rem;
+    font-size: 0.85rem;
+    line-height: 1.25;
+}
+
+.feed-topo small {
+    display: block;
+    color: var(--muted);
+}
+
+.feed-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #c455fb, #4a0b8f);
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #f2b84b;
+}
+
+.feed-grade {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+}
+
+.post {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 6px;
     display: grid;
     place-items: center;
-    width: 48px;
-    height: 48px;
-    margin-bottom: 1.1rem;
-    border-radius: 14px;
-    background: linear-gradient(135deg, #c455fb, #4a0b8f);
     color: #fff;
 }
 
-.servico-ico .icon {
+.post .icon {
     width: 22px;
     height: 22px;
+    padding: 4px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.35);
 }
 
-.servico h3 {
-    font-size: 1.2rem;
-    font-weight: 700;
-}
+.p1 { background: linear-gradient(135deg, #4a0b8f, #7216d3); }
+.p2 { background: linear-gradient(135deg, #f2b84b, #e07a3a); }
+.p3 { background: linear-gradient(135deg, #b88af0, #efe6fd); }
+.p4 { background: linear-gradient(135deg, #1a0f1f, #4a4150); }
+.p5 { background: linear-gradient(135deg, #c455fb, #f0b4ff); }
+.p6 { background: linear-gradient(135deg, #7216d3, #2a0a52); }
 
-.servico-ganho {
-    margin: 0.35rem 0 1rem;
-    color: var(--brand);
-    font-weight: 600;
-    font-size: 0.95rem;
-    line-height: 1.45;
-}
-
-.servico ul {
-    list-style: none;
+/* 02 busca */
+.cena-busca {
+    background: #fff;
     display: grid;
-    gap: 0.55rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--line);
+    gap: 0.6rem;
 }
 
-.servico li {
-    display: flex;
-    gap: 0.5rem;
-    align-items: flex-start;
-    font-size: 0.95rem;
-    line-height: 1.4;
-}
-
-.servico li .icon {
-    flex: none;
-    width: 17px;
-    height: 17px;
-    margin-top: 2px;
-    color: var(--brand);
-}
-
-.servicos-plano {
+.busca-barra {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
-    margin-top: 1.25rem;
-    padding: 1.6rem 1.8rem;
-    border-radius: var(--radius-lg);
-    background: var(--brand-50);
-    border: 1px solid var(--brand-100);
+    gap: 0.5rem;
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-sm);
+    font-size: 0.92rem;
+    color: var(--muted);
 }
 
-.servicos-plano strong {
-    font-family: var(--font-display);
-    font-size: 1.2rem;
+.busca-barra .icon {
+    width: 16px;
+    height: 16px;
+    color: var(--brand);
+}
+
+.busca-resultado {
+    display: grid;
+    gap: 0.35rem;
+    padding: 0.8rem 0.9rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--line);
+}
+
+.busca-resultado.destaque {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-color: var(--brand-300);
+    background: var(--brand-50);
+    font-size: 0.92rem;
+    line-height: 1.35;
+}
+
+.busca-resultado.destaque b {
     color: var(--ink);
 }
 
-.servicos-plano p {
-    margin-top: 0.25rem;
-    max-width: 640px;
+.busca-resultado.destaque small {
+    display: block;
+    color: var(--muted);
 }
 
-@media (max-width: 1024px) {
-    .servicos {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+.busca-resultado.destaque em {
+    font-style: normal;
+    color: #f2b84b;
+    letter-spacing: 1px;
+}
+
+.busca-pin {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    flex: none;
+    border-radius: 50%;
+    background: var(--brand);
+    color: #fff;
+}
+
+.busca-pin .icon {
+    width: 18px;
+    height: 18px;
+}
+
+.busca-linha {
+    height: 8px;
+    border-radius: 99px;
+    background: var(--line);
+}
+
+.busca-linha.curta {
+    width: 55%;
+}
+
+/* 03 chat */
+.cena-chat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    background: #efeae2;
+    background-image: none;
+    font-size: 0.92rem;
+    line-height: 1.4;
+}
+
+.msg {
+    max-width: 82%;
+    padding: 0.55rem 0.8rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+}
+
+.msg.in {
+    align-self: flex-start;
+    background: #fff;
+    border-top-left-radius: 4px;
+}
+
+.msg.out {
+    align-self: flex-end;
+    background: #d9fdd3;
+    border-top-right-radius: 4px;
+}
+
+.msg.proposta {
+    align-self: stretch;
+    max-width: none;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: #fff;
+    border: 1px solid var(--brand-100);
+}
+
+.msg.proposta > .icon {
+    width: 22px;
+    height: 22px;
+    color: var(--brand);
+    flex: none;
+}
+
+.msg.proposta .ok {
+    margin-left: auto;
+    color: var(--ok);
+}
+
+.msg.proposta b {
+    display: block;
+    color: var(--ink);
+}
+
+.msg.proposta small {
+    color: var(--muted);
+}
+
+/* 04 quadro de pedidos */
+.cena-quadro {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+    background: #fff;
+}
+
+.quadro-col {
+    display: grid;
+    align-content: start;
+    gap: 0.45rem;
+    padding: 0.6rem;
+    border-radius: var(--radius-sm);
+    background: var(--bg-soft);
+}
+
+.quadro-col small {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.cartao {
+    height: 30px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-sm);
+}
+
+.cartao.ok {
+    border-left: 3px solid var(--ok);
+}
+
+/* o pedido que "anda" sozinho de coluna */
+.cartao.anda {
+    border-left: 3px solid var(--brand);
+    animation: anda 4.5s var(--ease-out) infinite;
+}
+
+@keyframes anda {
+    0%, 20% { transform: translateX(0); opacity: 1; }
+    45% { transform: translateX(105%); opacity: 1; }
+    65% { transform: translateX(210%); opacity: 1; }
+    80%, 100% { transform: translateX(210%); opacity: 0; }
+}
+
+/* plano mensal */
+.plano-mensal {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 2rem;
+    align-items: center;
+    margin-top: clamp(3.5rem, 8vw, 5.5rem);
+    padding: clamp(1.75rem, 4vw, 2.75rem);
+    border-radius: var(--radius-lg);
+    background: #1a0f1f;
+    color: #d8d0de;
+    position: relative;
+    overflow: hidden;
+}
+
+.plano-mensal::after {
+    content: '';
+    position: absolute;
+    right: -120px;
+    top: -140px;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(196, 85, 251, 0.45), transparent 65%);
+    pointer-events: none;
+}
+
+.plano-texto,
+.plano-calendario {
+    position: relative;
+    z-index: 1;
+}
+
+.plano-selo {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(196, 85, 251, 0.18);
+    color: #e2c4ff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.plano-texto h3 {
+    margin: 0.9rem 0 1.4rem;
+    color: #fff;
+    font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.plano-calendario {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.6rem;
+}
+
+.semana {
+    padding: 1rem 0.85rem;
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.semana small {
+    font-size: 0.75rem;
+    color: #b7afc6;
+    font-weight: 600;
+}
+
+.semana b {
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 0.98rem;
+    line-height: 1.25;
+}
+
+.semana:last-child {
+    background: linear-gradient(135deg, #c455fb, #4a0b8f);
+    border-color: transparent;
+}
+
+@media (max-width: 900px) {
+    .jornada::before,
+    .etapa::before {
+        left: 0;
+    }
+
+    .etapa {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding-left: 1.75rem;
+    }
+
+    .etapa:nth-child(even) .etapa-texto {
+        order: 0;
+    }
+
+    .etapa::before {
+        top: 1.6rem;
+    }
+
+    .etapa-cena,
+    .etapa:nth-child(even) .etapa-cena {
+        transform: none;
+    }
+
+    .plano-mensal {
+        grid-template-columns: 1fr;
+    }
+
+    .plano-calendario {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 640px) {
-    .servicos {
-        grid-template-columns: 1fr;
-    }
-
-    .servicos-plano {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .servicos-plano .btn {
+    .plano-texto .btn {
         width: 100%;
         justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cartao.anda {
+        animation: none;
     }
 }
