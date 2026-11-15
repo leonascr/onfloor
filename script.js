@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ─── SCROLL REVEAL ────────────────────────────────────
     // Classes (e não estilos inline) para não travar o efeito de hover dos cards
-    const groups = ['.compare-row', '.bento-card', '.etapa', '.plano-mensal', '.showcase-panels', '.step', '.faq-item', '.contact-panel'];
+    const groups = ['.bento-card', '.etapa', '.plano-mensal', '.showcase-panels', '.step', '.faq-item', '.contact-panel'];
     if (!reduceMotion && 'IntersectionObserver' in window) {
         const scrollObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -98,142 +98,99 @@ document.addEventListener('DOMContentLoaded', () => {
         track.style.setProperty('--marquee-duration', `${Math.round(track.scrollWidth / 2 / 45)}s`);
     }
 
-    // ─── HERO: demonstração animada ───────────────────────
-    // Tarefas chegam (WhatsApp, formulário, planilha), passam pela On Floor e saem prontas.
-    const flow = document.getElementById('heroFlow');
-    if (flow) {
-        const stage = flow.querySelector('.flow-stage');
-        const svg = document.getElementById('flowLines');
-        const core = flow.querySelector('.flow-core');
-        const coreBtn = flow.querySelector('.core-btn');
-        const inputs = [...flow.querySelectorAll('[data-in]')];
-        const outputs = [...flow.querySelectorAll('[data-out]')];
-        const feed = document.getElementById('flowFeed');
-        const messages = [
-            'Mensagem do WhatsApp virou pedido no sistema',
-            'Orçamento do site respondido na hora',
-            'Relatório do dia atualizado e enviado',
-        ];
-        const NS = 'http://www.w3.org/2000/svg';
-        let inPaths = [];
-        let outPaths = [];
+    // ─── HERO: estúdio que constrói sozinho ───────────────
+    // Cada cena (automação → sistema → perfil → landing page) monta as peças na sua vez
+    // (classe .on dispara as transições do CSS) e passa para a próxima.
+    const estudio = document.getElementById('estudio');
+    if (estudio) {
+        const cenas = [...estudio.querySelectorAll('.cena')];
+        const abas = [...estudio.querySelectorAll('.aba')];
+        const status = document.getElementById('estudioStatus');
+        const nomes = ['automação', 'sistema', 'perfil', 'landing page'];
+        const prontos = ['Automação pronta: o pedido entrou sozinho', 'Sistema pronto: tudo num lugar só', 'Perfil pronto: posts no ar', 'Landing page pronta: chegou um pedido'];
+        const DURACAO = 6500;
+        let atual = -1;
+        let relogio = null;
+        let visivel = true;
 
-        const box = (el) => {
-            const s = stage.getBoundingClientRect();
-            const r = el.getBoundingClientRect();
-            return { l: r.left - s.left, r: r.right - s.left, t: r.top - s.top, b: r.bottom - s.top,
-                cx: r.left - s.left + r.width / 2, cy: r.top - s.top + r.height / 2 };
-        };
-
-        const makePath = (d) => {
-            const p = document.createElementNS(NS, 'path');
-            p.setAttribute('d', d);
-            p.setAttribute('class', 'line');
-            svg.appendChild(p);
-            return p;
-        };
-
-        function drawLines() {
-            svg.innerHTML = '';
-            const c = box(coreBtn);
-            const coreBox = box(core);
-            // layout vertical (mobile) quando o núcleo fica abaixo das entradas
-            const vertical = c.t > box(inputs[0]).b;
-            inPaths = inputs.map(el => {
-                const a = box(el);
-                if (vertical) {
-                    const my = (a.b + c.t) / 2;
-                    return makePath(`M${a.cx},${a.b} C${a.cx},${my} ${c.cx},${my} ${c.cx},${c.t}`);
-                }
-                const mx = (a.r + c.l) / 2;
-                return makePath(`M${a.r},${a.cy} C${mx},${a.cy} ${mx},${c.cy} ${c.l},${c.cy}`);
+        function mostrar(i) {
+            clearTimeout(relogio);
+            atual = i;
+            estudio.classList.remove('pronto');
+            cenas.forEach((c, n) => c.classList.toggle('on', n === i));
+            abas.forEach((a, n) => {
+                a.classList.toggle('ativa', n === i);
+                a.classList.toggle('feita', n < i);
+                a.setAttribute('aria-selected', String(n === i));
+                // reinicia a barrinha de progresso da aba
+                const b = a.querySelector('b');
+                b.replaceWith(b.cloneNode(true));
             });
-            outPaths = outputs.map(el => {
-                const a = box(el);
-                if (vertical) {
-                    // no vertical, sai de baixo do rótulo "On Floor" para não cruzar o texto
-                    const my = (coreBox.b + a.t) / 2;
-                    return makePath(`M${c.cx},${coreBox.b} C${c.cx},${my} ${a.cx},${my} ${a.cx},${a.t}`);
-                }
-                const mx = (c.r + a.l) / 2;
-                return makePath(`M${c.r},${c.cy} C${mx},${c.cy} ${mx},${a.cy} ${a.l},${a.cy}`);
-            });
+            status.textContent = `Construindo ${nomes[i]}…`;
+            relogio = setTimeout(() => {
+                estudio.classList.add('pronto');
+                status.textContent = prontos[i];
+                relogio = setTimeout(() => { if (visivel) mostrar((i + 1) % cenas.length); else atual = -2; }, DURACAO - 4300);
+            }, 4300);
         }
 
-        // Move um ponto luminoso ao longo do caminho
-        function travel(path, duration) {
-            return new Promise(resolve => {
-                const dot = document.createElementNS(NS, 'circle');
-                dot.setAttribute('r', 5);
-                dot.setAttribute('class', 'pulse');
-                svg.appendChild(dot);
-                path.classList.add('is-hot');
-                const len = path.getTotalLength();
-                const start = performance.now();
-                const step = (now) => {
-                    const t = Math.min(1, (now - start) / duration);
-                    const eased = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
-                    const pt = path.getPointAtLength(eased * len);
-                    dot.setAttribute('cx', pt.x);
-                    dot.setAttribute('cy', pt.y);
-                    if (t < 1) requestAnimationFrame(step);
-                    else {
-                        dot.remove();
-                        path.classList.remove('is-hot');
-                        resolve();
-                    }
-                };
-                requestAnimationFrame(step);
-            });
-        }
-
-        const setFeed = async (text) => {
-            feed.classList.add('is-out');
-            await wait(250);
-            feed.textContent = text;
-            feed.classList.remove('is-out');
-        };
-
-        drawLines();
-        let resizeTimer;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(drawLines, 150);
-        });
-        document.fonts?.ready.then(drawLines);
+        estudio.style.setProperty('--duracao', `${DURACAO}ms`);
 
         if (reduceMotion) {
-            outputs.forEach(o => o.classList.add('is-done'));
+            // sem animação: mostra a automação pronta e deixa as abas trocarem
+            cenas[0].classList.add('on');
+            abas[0].classList.add('ativa');
+            estudio.classList.add('pronto');
+            status.textContent = prontos[0];
+            abas.forEach((a, n) => a.addEventListener('click', () => {
+                clearTimeout(relogio);
+                cenas.forEach((c, m) => c.classList.toggle('on', m === n));
+                abas.forEach((x, m) => x.classList.toggle('ativa', m === n));
+                status.textContent = prontos[n];
+            }));
         } else {
-            // Só anima enquanto o hero está visível e a aba está ativa
-            let visible = true;
-            new IntersectionObserver(([e]) => { visible = e.isIntersecting; }, { threshold: 0.1 }).observe(flow);
-            const idle = async () => {
-                while (!visible || document.hidden) await wait(400);
-            };
+            abas.forEach((a, n) => a.addEventListener('click', () => mostrar(n)));
+            // pausa fora da tela e retoma de onde parou
+            if ('IntersectionObserver' in window) {
+                new IntersectionObserver(([e]) => {
+                    visivel = e.isIntersecting;
+                    if (visivel && atual === -2) mostrar(0);
+                }, { threshold: 0.15 }).observe(estudio);
+            }
+            mostrar(0);
+        }
+    }
 
-            (async function loop() {
-                await wait(1200);
-                for (;;) {
-                    for (let i = 0; i < inputs.length; i++) {
-                        await idle();
-                        inputs[i].classList.add('is-active');
-                        await travel(inPaths[i], 900);
-                        inputs[i].classList.remove('is-active');
-                        core.classList.add('is-working');
-                        await wait(280);
-                        core.classList.remove('is-working');
-                        await travel(outPaths[i], 900);
-                        outputs[i].classList.add('is-done', 'is-active');
-                        setFeed(messages[i]);
-                        await wait(1100);
-                        outputs[i].classList.remove('is-active');
-                    }
-                    await wait(1800);
-                    outputs.forEach(o => o.classList.remove('is-done'));
-                    await wait(500);
-                }
-            })();
+    // ─── PROBLEMAS: virada hoje × com a On Floor ──────────
+    // O interruptor troca cada problema pela solução; vira sozinho uma vez quando a seção aparece.
+    const virada = document.getElementById('virada');
+    if (virada) {
+        const botoes = [...virada.querySelectorAll('.virada-chave button')];
+        const virar = (estado) => {
+            virada.dataset.estado = estado;
+            botoes.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.estado === estado)));
+        };
+        let mexeu = false;
+        botoes.forEach((b) => b.addEventListener('click', () => { mexeu = true; virar(b.dataset.estado); }));
+        if (!reduceMotion && 'IntersectionObserver' in window) {
+            const obs = new IntersectionObserver(([e]) => {
+                if (!e.isIntersecting) return;
+                obs.disconnect();
+                setTimeout(() => { if (!mexeu) virar('depois'); }, 1400);
+            }, { threshold: 0.5 });
+            obs.observe(virada);
+        }
+    }
+
+    // ─── COMO TRABALHAMOS: linha do tempo que se preenche ─
+    const passos = document.querySelector('.steps');
+    if (passos) {
+        if (reduceMotion || !('IntersectionObserver' in window)) passos.classList.add('anda');
+        else {
+            const obs = new IntersectionObserver(([e]) => {
+                if (e.isIntersecting) { passos.classList.add('anda'); obs.disconnect(); }
+            }, { threshold: 0.4 });
+            obs.observe(passos);
         }
     }
 

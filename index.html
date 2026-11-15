@@ -125,80 +125,129 @@
             <div class="hero-bg" aria-hidden="true"></div>
 
             <div class="hero-copy">
-                <h1 class="hero-title">Tire o <span class="marker">trabalho manual</span> das costas da sua equipe.</h1>
-                <p class="hero-lead">Sites, marketing, atendimento e sistemas que fazem o trabalho repetitivo sozinhos,
-                    para sua empresa ser encontrada, vender mais e crescer com eficiência.</p>
+                <p class="hero-kicker"><span></span> Agência de tecnologia · Brasília</p>
+                <h1 class="hero-title">A gente constrói o que <span class="marker">trabalha por você.</span></h1>
+                <p class="hero-lead">Automações, sistemas, redes sociais e sites que atraem clientes, atendem na hora e
+                    tiram o trabalho manual das costas da sua equipe.</p>
                 <div class="hero-actions">
-                    <a href="#contato" class="btn btn-primary btn-lg">Quero melhorar minha operação <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
-                    <a href="#sites" class="btn btn-ghost btn-lg">Ver projetos</a>
+                    <a href="#contato" class="btn btn-primary btn-lg">Quero o meu projeto <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
+                    <a href="#servicos" class="btn btn-ghost btn-lg">Ver serviços</a>
                 </div>
                 <ul class="hero-trust">
                     <li><svg class="icon"><use href="#i-check"></use></svg> Conversa sem termos técnicos</li>
-                    <li><svg class="icon"><use href="#i-check"></use></svg> Projetos sob medida</li>
-                    <li><svg class="icon"><use href="#i-check"></use></svg> Acompanhamento depois da entrega</li>
+                    <li><svg class="icon"><use href="#i-check"></use></svg> Você aprova antes</li>
+                    <li><svg class="icon"><use href="#i-check"></use></svg> Acompanhamento depois</li>
                 </ul>
             </div>
 
-            <!-- Demonstração animada: tarefas chegam, a On Floor processa, o trabalho sai pronto -->
-            <div class="flow" id="heroFlow" role="img"
-                aria-label="Exemplo de automação: uma mensagem no WhatsApp, um formulário do site e uma planilha passam pela On Floor e viram pedido cadastrado, cliente respondido e relatório atualizado, sem trabalho manual.">
-                <div class="flow-window">
-                    <div class="flow-bar" aria-hidden="true">
-                        <span class="dots"><i></i><i></i><i></i></span>
-                        <span class="flow-bar-title">Operação da sua empresa</span>
-                        <span class="flow-bar-badge"><i></i> Exemplo</span>
-                    </div>
-
-                    <div class="flow-stage" aria-hidden="true">
-                        <svg class="flow-lines" id="flowLines"></svg>
-
-                        <div class="flow-col flow-in">
-                            <p class="flow-label">Chega</p>
-                            <div class="flow-node" data-in="0">
-                                <span class="flow-ico ico-green"><svg class="icon"><use href="#i-message-circle"></use></svg></span>
-                                <span class="flow-txt"><strong>WhatsApp</strong><small>“Quero fazer um pedido”</small></span>
-                            </div>
-                            <div class="flow-node" data-in="1">
-                                <span class="flow-ico ico-blue"><svg class="icon"><use href="#i-file-text"></use></svg></span>
-                                <span class="flow-txt"><strong>Formulário do site</strong><small>Pedido de orçamento</small></span>
-                            </div>
-                            <div class="flow-node" data-in="2">
-                                <span class="flow-ico ico-amber"><svg class="icon"><use href="#i-sheet"></use></svg></span>
-                                <span class="flow-txt"><strong>Planilha</strong><small>Vendas do dia</small></span>
-                            </div>
-                        </div>
-
-                        <div class="flow-core">
-                            <span class="core-ring"></span>
-                            <span class="core-ring core-ring--2"></span>
-                            <span class="core-btn"><img src="logo/glyph-white.png" alt="" width="120" height="120"></span>
-                            <span class="core-label">On Floor</span>
-                        </div>
-
-                        <div class="flow-col flow-out">
-                            <p class="flow-label">Sai pronto</p>
-                            <div class="flow-node" data-out="0">
-                                <span class="flow-ico"><svg class="icon"><use href="#i-database"></use></svg></span>
-                                <span class="flow-txt"><strong>Pedido no sistema</strong><small>Cadastrado sozinho</small></span>
-                                <span class="flow-check"><svg class="icon"><use href="#i-check"></use></svg></span>
-                            </div>
-                            <div class="flow-node" data-out="1">
-                                <span class="flow-ico"><svg class="icon"><use href="#i-send"></use></svg></span>
-                                <span class="flow-txt"><strong>Cliente respondido</strong><small>Na hora, 24h por dia</small></span>
-                                <span class="flow-check"><svg class="icon"><use href="#i-check"></use></svg></span>
-                            </div>
-                            <div class="flow-node" data-out="2">
-                                <span class="flow-ico"><svg class="icon"><use href="#i-bar-chart-3"></use></svg></span>
-                                <span class="flow-txt"><strong>Relatório</strong><small>Atualizado e enviado</small></span>
-                                <span class="flow-check"><svg class="icon"><use href="#i-check"></use></svg></span>
-                            </div>
+            <!-- Estúdio: as entregas se constroem sozinhas, em sequência (automação → sistema → perfil → landing page) -->
+            <div class="estudio" id="estudio" role="img"
+                aria-label="Animação: a On Floor construindo, em sequência, uma automação, um sistema, um perfil de rede social e uma landing page.">
+                <div class="estudio-janela">
+                    <div class="estudio-barra">
+                        <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                        <div class="estudio-abas" role="tablist" aria-label="O que estamos construindo">
+                            <button class="aba" data-cena="0" role="tab">Automação<b></b></button>
+                            <button class="aba" data-cena="1" role="tab">Sistema<b></b></button>
+                            <button class="aba" data-cena="2" role="tab">Perfil<b></b></button>
+                            <button class="aba" data-cena="3" role="tab">Landing page<b></b></button>
                         </div>
                     </div>
 
-                    <div class="flow-feed" aria-hidden="true">
-                        <svg class="icon"><use href="#i-sparkles"></use></svg>
-                        <span id="flowFeed">Mensagem do WhatsApp virou pedido no sistema</span>
-                        <em>sem ninguém digitar nada</em>
+                    <div class="estudio-palco" aria-hidden="true">
+                        <!-- 1. AUTOMAÇÃO -->
+                        <div class="cena cena-auto" data-cena="0">
+                            <div class="auto-no auto-entrada b" style="--d:0">
+                                <span class="auto-ico verde"><svg class="icon"><use href="#i-message-circle"></use></svg></span>
+                                <span><b>WhatsApp</b><small>“Quero um orçamento”</small></span>
+                            </div>
+                            <!-- fios em SVG no mesmo tamanho do palco (560×330): desenham e depois levam um "pacote" -->
+                            <svg class="auto-fios" viewBox="0 0 560 330">
+                                <path class="fio" style="--d:1" pathLength="1" d="M190 165 L242 165" />
+                                <path class="fio" style="--d:3" pathLength="1" d="M318 165 C348 165 340 75 370 75" />
+                                <path class="fio" style="--d:3.2" pathLength="1" d="M318 165 C348 165 340 255 370 255" />
+                                <circle class="pacote" style="--d:2" r="5"><animateMotion dur="1.4s" repeatCount="indefinite" path="M190 165 L242 165" /></circle>
+                                <circle class="pacote" style="--d:4" r="5"><animateMotion dur="1.6s" repeatCount="indefinite" path="M318 165 C348 165 340 75 370 75" /></circle>
+                                <circle class="pacote" style="--d:4.4" r="5"><animateMotion dur="1.6s" repeatCount="indefinite" path="M318 165 C348 165 340 255 370 255" /></circle>
+                            </svg>
+                            <div class="auto-nucleo b" style="--d:2">
+                                <span class="nucleo-anel"></span>
+                                <img src="logo/glyph-white.png" alt="" width="120" height="120">
+                            </div>
+                            <div class="auto-no auto-saida s1 b" style="--d:4">
+                                <span class="auto-ico"><svg class="icon"><use href="#i-database"></use></svg></span>
+                                <span><b>Pedido no sistema</b><small>cadastrado sozinho</small></span>
+                                <svg class="icon auto-ok"><use href="#i-circle-check"></use></svg>
+                            </div>
+                            <div class="auto-no auto-saida s2 b" style="--d:5">
+                                <span class="auto-ico"><svg class="icon"><use href="#i-send"></use></svg></span>
+                                <span><b>Cliente respondido</b><small>na hora, 24h</small></span>
+                                <svg class="icon auto-ok"><use href="#i-circle-check"></use></svg>
+                            </div>
+                        </div>
+
+                        <!-- 2. SISTEMA -->
+                        <div class="cena cena-sis" data-cena="1">
+                            <div class="sis-lateral b" style="--d:0"><i class="on"></i><i></i><i></i><i></i></div>
+                            <div class="sis-corpo">
+                                <div class="sis-kpis">
+                                    <span class="kpi b" style="--d:1"><small>Pedidos hoje</small><b>24</b></span>
+                                    <span class="kpi b" style="--d:1.4"><small>Respondidos</small><b>100%</b></span>
+                                    <span class="kpi b" style="--d:1.8"><small>Em aberto</small><b>3</b></span>
+                                </div>
+                                <div class="sis-grafico b" style="--d:2.2">
+                                    <i style="--h:38%"></i><i style="--h:55%"></i><i style="--h:46%"></i><i style="--h:70%"></i><i style="--h:62%"></i><i style="--h:88%"></i><i style="--h:76%"></i>
+                                </div>
+                                <div class="sis-tabela">
+                                    <span class="linha b" style="--d:3.2"><i></i><em class="st ok">Fechado</em></span>
+                                    <span class="linha b" style="--d:3.5"><i></i><em class="st and">Em andamento</em></span>
+                                    <span class="linha b" style="--d:3.8"><i></i><em class="st novo">Novo</em></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. PERFIL -->
+                        <div class="cena cena-perfil" data-cena="2">
+                            <div class="perfil-topo">
+                                <span class="perfil-avatar b" style="--d:0"><i></i></span>
+                                <div class="perfil-info">
+                                    <b class="perfil-nome b digita" style="--d:0.6">suaempresa</b>
+                                    <span class="perfil-num b" style="--d:1"><b>128</b> posts <b>2,4 mil</b> seguidores</span>
+                                    <span class="perfil-bio b" style="--d:1.3"></span>
+                                </div>
+                            </div>
+                            <div class="perfil-destaques">
+                                <i class="b" style="--d:1.6"></i><i class="b" style="--d:1.75"></i><i class="b" style="--d:1.9"></i><i class="b" style="--d:2.05"></i>
+                            </div>
+                            <div class="perfil-grade">
+                                <i class="t1 b" style="--d:2.3"></i><i class="t2 b" style="--d:2.45"></i><i class="t3 b" style="--d:2.6"></i>
+                                <i class="t4 b" style="--d:2.75"></i><i class="t5 b" style="--d:2.9"></i><i class="t6 b" style="--d:3.05"></i>
+                            </div>
+                        </div>
+
+                        <!-- 4. LANDING PAGE -->
+                        <div class="cena cena-lp" data-cena="3">
+                            <div class="lp-nav b" style="--d:0"><i class="logo"></i><i></i><i></i><i class="cta"></i></div>
+                            <div class="lp-hero">
+                                <div class="lp-texto">
+                                    <span class="lp-linha l1 b" style="--d:0.6"></span>
+                                    <span class="lp-linha l2 b" style="--d:1"></span>
+                                    <span class="lp-linha l3 b" style="--d:1.4"></span>
+                                    <span class="lp-botao b" style="--d:1.9">Pedir orçamento</span>
+                                </div>
+                                <span class="lp-imagem b" style="--d:1.2"></span>
+                            </div>
+                            <div class="lp-cards">
+                                <i class="b" style="--d:2.4"></i><i class="b" style="--d:2.6"></i><i class="b" style="--d:2.8"></i>
+                            </div>
+                            <span class="lp-cursor"><svg viewBox="0 0 24 24"><path d="M4 3l14 7-6 1.7L9.3 18z"/></svg></span>
+                            <span class="lp-toast"><svg class="icon"><use href="#i-bell"></use></svg> Novo pedido de orçamento!</span>
+                        </div>
+                    </div>
+
+                    <div class="estudio-status" aria-hidden="true">
+                        <span class="status-ponto"></span>
+                        <span id="estudioStatus">Construindo automação…</span>
                     </div>
                 </div>
             </div>
@@ -240,118 +289,47 @@
                 <h2 class="section-heading">Sua empresa ainda depende disso?</h2>
             </div>
 
-            <div class="compare">
-                <div class="compare-head" aria-hidden="true">
-                    <span>Hoje</span>
-                    <span></span>
-                    <span>Com a On Floor</span>
+            <!-- Virada: o interruptor transforma cada problema na solução -->
+            <div class="virada" id="virada" data-estado="hoje">
+                <div class="virada-chave" role="group" aria-label="Comparar">
+                    <button type="button" data-estado="hoje" aria-pressed="true">Hoje</button>
+                    <button type="button" data-estado="depois" aria-pressed="false">Com a On Floor</button>
+                    <span class="virada-pino" aria-hidden="true"></span>
                 </div>
-                <ul class="compare-list">
-                    <li class="compare-row">
-                        <span class="before">Copiar pedidos do WhatsApp para a planilha</span>
-                        <span class="compare-arrow"><svg class="icon"><use href="#i-arrow-right"></use></svg></span>
-                        <span class="after"><svg class="icon"><use href="#i-circle-check"></use></svg> O pedido entra no sistema sozinho</span>
+
+                <ul class="virada-lista">
+                    <li>
+                        <span class="antes"><svg class="icon"><use href="#i-x"></use></svg> Copiar pedidos do WhatsApp para a planilha</span>
+                        <span class="depois"><svg class="icon"><use href="#i-circle-check"></use></svg> O pedido entra no sistema sozinho</span>
                     </li>
-                    <li class="compare-row">
-                        <span class="before">Responder as mesmas perguntas o dia todo</span>
-                        <span class="compare-arrow"><svg class="icon"><use href="#i-arrow-right"></use></svg></span>
-                        <span class="after"><svg class="icon"><use href="#i-circle-check"></use></svg> Um assistente responde na hora</span>
+                    <li>
+                        <span class="antes"><svg class="icon"><use href="#i-x"></use></svg> Responder as mesmas perguntas o dia todo</span>
+                        <span class="depois"><svg class="icon"><use href="#i-circle-check"></use></svg> O cliente é respondido na hora, 24h</span>
                     </li>
-                    <li class="compare-row">
-                        <span class="before">Controlar processos em planilhas soltas</span>
-                        <span class="compare-arrow"><svg class="icon"><use href="#i-arrow-right"></use></svg></span>
-                        <span class="after"><svg class="icon"><use href="#i-circle-check"></use></svg> Tudo em um sistema, num só lugar</span>
+                    <li>
+                        <span class="antes"><svg class="icon"><use href="#i-x"></use></svg> Ninguém acha sua empresa no Google</span>
+                        <span class="depois"><svg class="icon"><use href="#i-circle-check"></use></svg> Site, perfil e avaliações mostrando sua empresa</span>
                     </li>
-                    <li class="compare-row">
-                        <span class="before">Cadastrar a mesma informação várias vezes</span>
-                        <span class="compare-arrow"><svg class="icon"><use href="#i-arrow-right"></use></svg></span>
-                        <span class="after"><svg class="icon"><use href="#i-circle-check"></use></svg> Cadastra uma vez, aparece em todo lugar</span>
+                    <li>
+                        <span class="antes"><svg class="icon"><use href="#i-x"></use></svg> Redes sociais paradas há meses</span>
+                        <span class="depois"><svg class="icon"><use href="#i-circle-check"></use></svg> Posts e vídeos novos todo mês</span>
                     </li>
-                    <li class="compare-row">
-                        <span class="before">Cobrar e acompanhar tarefas uma a uma</span>
-                        <span class="compare-arrow"><svg class="icon"><use href="#i-arrow-right"></use></svg></span>
-                        <span class="after"><svg class="icon"><use href="#i-circle-check"></use></svg> Lembretes e acompanhamento automáticos</span>
+                    <li>
+                        <span class="antes"><svg class="icon"><use href="#i-x"></use></svg> Controlar tudo em planilhas soltas</span>
+                        <span class="depois"><svg class="icon"><use href="#i-circle-check"></use></svg> Tudo num sistema, num lugar só</span>
                     </li>
                 </ul>
             </div>
 
             <div class="section-cta">
                 <p>Provavelmente existe uma forma melhor de fazer isso.</p>
-                <a href="#contato" class="btn btn-primary">Descobrir o que posso automatizar <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
-            </div>
-        </section>
-
-        <!-- ═══════════════ SOLUÇÕES — bento (id mantido para links antigos) ═══════════════ -->
-        <section id="capabilities" class="section section-soft">
-            <div class="section-head">
-                <p class="eyebrow">Soluções</p>
-                <h2 class="section-heading">Começamos pelo problema.<br>A tecnologia vem depois.</h2>
-            </div>
-
-            <div class="bento">
-                <article class="bento-card bento-card--wide">
-                    <div class="bento-visual viz-flow" aria-hidden="true">
-                        <span class="viz-step"><svg class="icon"><use href="#i-message-circle"></use></svg> Pedido recebido</span>
-                        <span class="viz-link"></span>
-                        <span class="viz-step"><svg class="icon"><use href="#i-sheet"></use></svg> Planilha</span>
-                        <span class="viz-link"></span>
-                        <span class="viz-step viz-step--done"><svg class="icon"><use href="#i-mail"></use></svg> E-mail enviado</span>
-                    </div>
-                    <span class="bento-tag"><svg class="icon"><use href="#i-workflow"></use></svg> Automações</span>
-                    <h3>Automatize processos repetitivos.</h3>
-                    <p>O que alguém faz na mão todo dia passa a acontecer sozinho.</p>
-                </article>
-
-                <article class="bento-card bento-card--wide">
-                    <div class="bento-visual viz-chat" aria-hidden="true">
-                        <span class="bubble bubble--in">Vocês abrem no sábado?</span>
-                        <span class="bubble bubble--out">Abrimos, sim! Quer que eu reserve um horário?</span>
-                    </div>
-                    <span class="bento-tag"><svg class="icon"><use href="#i-bot"></use></svg> Atendimento automático</span>
-                    <h3>Atenda clientes na hora, 24h por dia.</h3>
-                    <p>Um assistente virtual que conversa, consulta informações e resolve pedidos.</p>
-                </article>
-
-                <article class="bento-card">
-                    <div class="bento-visual viz-table" aria-hidden="true">
-                        <span><i></i><b class="st st--ok">Entregue</b></span>
-                        <span><i></i><b class="st st--wip">Em rota</b></span>
-                        <span><i></i><b class="st st--new">Novo</b></span>
-                    </div>
-                    <span class="bento-tag"><svg class="icon"><use href="#i-layout-dashboard"></use></svg> Sistemas</span>
-                    <h3>Tire processos das planilhas.</h3>
-                    <p>Um sistema do jeito que sua empresa trabalha.</p>
-                </article>
-
-                <article class="bento-card">
-                    <div class="bento-visual viz-hub" aria-hidden="true">
-                        <span class="hub-dot"><svg class="icon"><use href="#i-sheet"></use></svg></span>
-                        <span class="hub-dot"><svg class="icon"><use href="#i-mail"></use></svg></span>
-                        <span class="hub-center"><svg class="icon"><use href="#i-plug-zap"></use></svg></span>
-                        <span class="hub-dot"><svg class="icon"><use href="#i-message-circle"></use></svg></span>
-                        <span class="hub-dot"><svg class="icon"><use href="#i-database"></use></svg></span>
-                    </div>
-                    <span class="bento-tag"><svg class="icon"><use href="#i-plug-zap"></use></svg> Integrações</span>
-                    <h3>Faça seus programas conversarem.</h3>
-                    <p>A informação circula sozinha entre as ferramentas.</p>
-                </article>
-
-                <article class="bento-card">
-                    <div class="bento-visual viz-site" aria-hidden="true">
-                        <span class="site-bar"><i></i><i></i><i></i></span>
-                        <span class="site-line site-line--lg"></span>
-                        <span class="site-line"></span>
-                        <span class="site-btn">Pedir orçamento</span>
-                    </div>
-                    <span class="bento-tag"><svg class="icon"><use href="#i-monitor-smartphone"></use></svg> Sites e páginas</span>
-                    <h3>Presença digital que gera contatos.</h3>
-                    <p>Sites que explicam o que você faz e trazem clientes.</p>
-                </article>
+                <a href="#contato" class="btn btn-primary">Quero descobrir <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
             </div>
         </section>
 
         <!-- ═══════════════ SERVIÇOS — jornada do cliente ═══════════════ -->
         <section id="servicos" class="section">
+            <span id="capabilities" aria-hidden="true"></span>
             <div class="section-head section-head--center">
                 <p class="eyebrow">Serviços</p>
                 <h2 class="section-heading">Do “nunca ouvi falar” ao cliente fechado.</h2>
