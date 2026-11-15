@@ -161,27 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // ─── PROBLEMAS: virada hoje × com a On Floor ──────────
-    // O interruptor troca cada problema pela solução; vira sozinho uma vez quando a seção aparece.
-    const virada = document.getElementById('virada');
-    if (virada) {
-        const botoes = [...virada.querySelectorAll('.virada-chave button')];
-        const virar = (estado) => {
-            virada.dataset.estado = estado;
-            botoes.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.estado === estado)));
-        };
-        let mexeu = false;
-        botoes.forEach((b) => b.addEventListener('click', () => { mexeu = true; virar(b.dataset.estado); }));
-        if (!reduceMotion && 'IntersectionObserver' in window) {
-            const obs = new IntersectionObserver(([e]) => {
-                if (!e.isIntersecting) return;
-                obs.disconnect();
-                setTimeout(() => { if (!mexeu) virar('depois'); }, 1400);
-            }, { threshold: 0.5 });
-            obs.observe(virada);
-        }
-    }
-
     // ─── COMO TRABALHAMOS: linha do tempo que se preenche ─
     const passos = document.querySelector('.steps');
     if (passos) {
