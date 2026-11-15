@@ -2430,3 +2430,130 @@ textarea:focus-visible {
         transform: none;
     }
 }
+
+/* ═══════════════ SERVIÇOS — leque completo ═══════════════ */
+.servicos-lead {
+    margin-top: 0.9rem;
+    color: var(--muted);
+    font-size: 1.08rem;
+}
+
+.servicos {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.servico {
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem 1.4rem;
+    border-radius: var(--radius-lg);
+    background: #fff;
+    border: 1px solid var(--line);
+    transition: transform 0.35s var(--ease-out), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.servico:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+    border-color: transparent;
+}
+
+.servico-ico {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1.1rem;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #c455fb, #4a0b8f);
+    color: #fff;
+}
+
+.servico-ico .icon {
+    width: 22px;
+    height: 22px;
+}
+
+.servico h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.servico-ganho {
+    margin: 0.35rem 0 1rem;
+    color: var(--brand);
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.45;
+}
+
+.servico ul {
+    list-style: none;
+    display: grid;
+    gap: 0.55rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+}
+
+.servico li {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.servico li .icon {
+    flex: none;
+    width: 17px;
+    height: 17px;
+    margin-top: 2px;
+    color: var(--brand);
+}
+
+.servicos-plano {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 1.25rem;
+    padding: 1.6rem 1.8rem;
+    border-radius: var(--radius-lg);
+    background: var(--brand-50);
+    border: 1px solid var(--brand-100);
+}
+
+.servicos-plano strong {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--ink);
+}
+
+.servicos-plano p {
+    margin-top: 0.25rem;
+    max-width: 640px;
+}
+
+@media (max-width: 1024px) {
+    .servicos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .servicos {
+        grid-template-columns: 1fr;
+    }
+
+    .servicos-plano {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .servicos-plano .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
