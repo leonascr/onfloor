@@ -2219,27 +2219,27 @@ textarea:focus-visible {
     inset: 0;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.45s ease, visibility 0s 0.45s;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
 }
 
 .cena.on {
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.45s ease;
+    transition: opacity 0.3s ease;
 }
 
 /* cada peça "entra" na sua vez (--d = ordem) */
 .cena .b {
     opacity: 0;
     transform: translateY(12px) scale(0.94);
-    transition: opacity 0.5s var(--ease-out), transform 0.6s var(--ease-out);
+    transition: opacity 0.35s var(--ease-out), transform 0.4s var(--ease-out);
     transition-delay: 0s;
 }
 
 .cena.on .b {
     opacity: 1;
     transform: none;
-    transition-delay: calc(var(--d) * 0.24s + 0.08s);
+    transition-delay: calc(var(--d) * 0.15s + 0.05s);
 }
 
 .estudio-status {
@@ -2348,12 +2348,12 @@ textarea:focus-visible {
     stroke-width: 2.5;
     stroke-dasharray: 1;
     stroke-dashoffset: 1;
-    transition: stroke-dashoffset 0.45s var(--ease-out);
+    transition: stroke-dashoffset 0.3s var(--ease-out);
 }
 
 .cena.on .fio {
     stroke-dashoffset: 0;
-    transition-delay: calc(var(--d) * 0.24s + 0.08s);
+    transition-delay: calc(var(--d) * 0.15s + 0.05s);
 }
 
 .pacote {
@@ -2364,7 +2364,7 @@ textarea:focus-visible {
 
 .cena.on .pacote {
     opacity: 1;
-    transition-delay: calc(var(--d) * 0.24s + 0.08s);
+    transition-delay: calc(var(--d) * 0.15s + 0.05s);
 }
 
 .auto-nucleo {
@@ -2395,7 +2395,7 @@ textarea:focus-visible {
 }
 
 .cena.on .nucleo-anel {
-    animation: anel 1.6s ease-out 0.7s infinite;
+    animation: anel 1.2s ease-out 0.4s infinite;
 }
 
 @keyframes anel {
@@ -2479,20 +2479,20 @@ textarea:focus-visible {
     height: 0;
     border-radius: 5px 5px 0 0;
     background: linear-gradient(180deg, #c455fb, #7216d3);
-    transition: height 0.6s var(--ease-out);
+    transition: height 0.4s var(--ease-out);
 }
 
 .cena.on .sis-grafico i {
     height: var(--h);
-    transition-delay: 0.75s;
+    transition-delay: 0.45s;
 }
 
-.cena.on .sis-grafico i:nth-child(2) { transition-delay: 0.81s; }
-.cena.on .sis-grafico i:nth-child(3) { transition-delay: 0.87s; }
-.cena.on .sis-grafico i:nth-child(4) { transition-delay: 0.93s; }
-.cena.on .sis-grafico i:nth-child(5) { transition-delay: 0.99s; }
-.cena.on .sis-grafico i:nth-child(6) { transition-delay: 1.05s; }
-.cena.on .sis-grafico i:nth-child(7) { transition-delay: 1.11s; }
+.cena.on .sis-grafico i:nth-child(2) { transition-delay: 0.49s; }
+.cena.on .sis-grafico i:nth-child(3) { transition-delay: 0.53s; }
+.cena.on .sis-grafico i:nth-child(4) { transition-delay: 0.57s; }
+.cena.on .sis-grafico i:nth-child(5) { transition-delay: 0.61s; }
+.cena.on .sis-grafico i:nth-child(6) { transition-delay: 0.65s; }
+.cena.on .sis-grafico i:nth-child(7) { transition-delay: 0.69s; }
 
 .sis-tabela {
     display: grid;
@@ -2593,7 +2593,7 @@ textarea:focus-visible {
     white-space: nowrap;
     max-width: 0;
     border-right: 2px solid var(--brand);
-    transition: max-width 0.55s steps(11), opacity 0.2s;
+    transition: max-width 0.4s steps(11), opacity 0.15s;
 }
 
 .cena.on .digita {
@@ -2717,7 +2717,7 @@ textarea:focus-visible {
 }
 
 .cena.on .lp-botao {
-    animation: clique 0.3s ease 2.15s;
+    animation: clique 0.25s ease 1.3s;
 }
 
 @keyframes clique {
@@ -2762,7 +2762,7 @@ textarea:focus-visible {
 }
 
 .cena.on .lp-cursor {
-    animation: cursor 1s var(--ease-out) 1.2s forwards;
+    animation: cursor 0.65s var(--ease-out) 0.7s forwards;
 }
 
 @keyframes cursor {
@@ -2796,7 +2796,7 @@ textarea:focus-visible {
 }
 
 .cena.on .lp-toast {
-    animation: toast 0.4s var(--ease-out) 2.35s forwards;
+    animation: toast 0.3s var(--ease-out) 1.45s forwards;
 }
 
 @keyframes toast {
@@ -3129,14 +3129,14 @@ textarea:focus-visible {
 
 .cena.on .energia {
     opacity: 1;
-    transition-delay: calc(var(--d) * 0.24s + 0.08s);
-    animation: energia 0.6s linear infinite;
+    transition-delay: calc(var(--d) * 0.15s + 0.05s);
+    animation: energia 0.4s linear infinite;
 }
 
 @keyframes energia { to { stroke-dashoffset: -0.3; } }
 
 .pacotes { opacity: 0; transition: opacity 0.3s; }
-.cena.on .pacotes { opacity: 1; transition-delay: calc(var(--d) * 0.24s + 0.08s); }
+.cena.on .pacotes { opacity: 1; transition-delay: calc(var(--d) * 0.15s + 0.05s); }
 .pacotes .pacote { fill: #fff; stroke: var(--brand); stroke-width: 3; opacity: 1; }
 .pacotes .halo { fill: #c455fb; opacity: 0.75; }
 
@@ -3150,8 +3150,8 @@ textarea:focus-visible {
     z-index: -1;
 }
 
-.cena.on .nucleo-giro { animation: gira 1.4s linear infinite; }
-.cena.on .auto-nucleo img { animation: respira 0.9s ease-in-out 1.2s infinite; }
+.cena.on .nucleo-giro { animation: gira 1s linear infinite; }
+.cena.on .auto-nucleo img { animation: respira 0.65s ease-in-out 0.6s infinite; }
 
 @keyframes respira {
     0%, 100% { transform: scale(1); }
