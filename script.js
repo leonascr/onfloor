@@ -99,16 +99,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ─── HERO: estúdio que constrói sozinho ───────────────
-    // Cada cena (automação → sistema → perfil → landing page) monta as peças na sua vez
+    // Cada cena (sistema → perfil → landing page → automação) monta as peças na sua vez
     // (classe .on dispara as transições do CSS) e passa para a próxima.
     const estudio = document.getElementById('estudio');
     if (estudio) {
         const cenas = [...estudio.querySelectorAll('.cena')];
         const abas = [...estudio.querySelectorAll('.aba')];
         const status = document.getElementById('estudioStatus');
-        const nomes = ['automação', 'sistema', 'perfil', 'landing page'];
-        const prontos = ['Automação pronta: o pedido entrou sozinho', 'Sistema pronto: tudo num lugar só', 'Perfil pronto: posts no ar', 'Landing page pronta: chegou um pedido'];
-        const DURACAO = 6500;
+        const nomes = ['sistema', 'perfil', 'landing page', 'automação'];
+        const prontos = ['Sistema pronto: tudo num lugar só', 'Perfil pronto: posts no ar', 'Landing page pronta: chegou um pedido', 'Automação pronta: o pedido entrou sozinho'];
+        const DURACAO = 4300; // ritmo rápido, pedido do Leo em 16/11
         let atual = -1;
         let relogio = null;
         let visivel = true;
@@ -130,14 +130,14 @@ document.addEventListener('DOMContentLoaded', () => {
             relogio = setTimeout(() => {
                 estudio.classList.add('pronto');
                 status.textContent = prontos[i];
-                relogio = setTimeout(() => { if (visivel) mostrar((i + 1) % cenas.length); else atual = -2; }, DURACAO - 4300);
-            }, 4300);
+                relogio = setTimeout(() => { if (visivel) mostrar((i + 1) % cenas.length); else atual = -2; }, DURACAO - 2700);
+            }, 2700);
         }
 
         estudio.style.setProperty('--duracao', `${DURACAO}ms`);
 
         if (reduceMotion) {
-            // sem animação: mostra a automação pronta e deixa as abas trocarem
+            // sem animação: mostra o sistema pronto e deixa as abas trocarem
             cenas[0].classList.add('on');
             abas[0].classList.add('ativa');
             estudio.classList.add('pronto');

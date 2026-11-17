@@ -2058,7 +2058,8 @@ textarea:focus-visible {
 /* ═══════════════ HERO — estúdio que constrói sozinho ═══════════════ */
 .hero {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
+    /* o estúdio é o foco da hero: coluna maior que a do texto */
+    grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.24fr);
     gap: clamp(2rem, 4vw, 4rem);
     align-items: center;
     min-height: min(100svh, 860px);
@@ -2098,7 +2099,7 @@ textarea:focus-visible {
 }
 
 .hero-title {
-    font-size: clamp(2.4rem, 4.6vw, 4rem);
+    font-size: clamp(2.3rem, 3.9vw, 3.5rem);
 }
 
 .hero-lead {
@@ -2112,7 +2113,7 @@ textarea:focus-visible {
 }
 
 .estudio {
-    animation: fadeUp 0.9s var(--ease-out) 0.25s both;
+    animation: fadeUp 0.6s var(--ease-out) 0.1s both;
 }
 
 /* janela */
@@ -2238,7 +2239,7 @@ textarea:focus-visible {
 .cena.on .b {
     opacity: 1;
     transform: none;
-    transition-delay: calc(var(--d) * 0.42s + 0.15s);
+    transition-delay: calc(var(--d) * 0.24s + 0.08s);
 }
 
 .estudio-status {
@@ -2347,12 +2348,12 @@ textarea:focus-visible {
     stroke-width: 2.5;
     stroke-dasharray: 1;
     stroke-dashoffset: 1;
-    transition: stroke-dashoffset 0.7s var(--ease-out);
+    transition: stroke-dashoffset 0.45s var(--ease-out);
 }
 
 .cena.on .fio {
     stroke-dashoffset: 0;
-    transition-delay: calc(var(--d) * 0.42s + 0.15s);
+    transition-delay: calc(var(--d) * 0.24s + 0.08s);
 }
 
 .pacote {
@@ -2363,7 +2364,7 @@ textarea:focus-visible {
 
 .cena.on .pacote {
     opacity: 1;
-    transition-delay: calc(var(--d) * 0.42s + 0.15s);
+    transition-delay: calc(var(--d) * 0.24s + 0.08s);
 }
 
 .auto-nucleo {
@@ -2394,7 +2395,7 @@ textarea:focus-visible {
 }
 
 .cena.on .nucleo-anel {
-    animation: anel 1.8s ease-out 1.2s infinite;
+    animation: anel 1.6s ease-out 0.7s infinite;
 }
 
 @keyframes anel {
@@ -2478,20 +2479,20 @@ textarea:focus-visible {
     height: 0;
     border-radius: 5px 5px 0 0;
     background: linear-gradient(180deg, #c455fb, #7216d3);
-    transition: height 0.9s var(--ease-out);
+    transition: height 0.6s var(--ease-out);
 }
 
 .cena.on .sis-grafico i {
     height: var(--h);
-    transition-delay: 1.4s;
+    transition-delay: 0.75s;
 }
 
-.cena.on .sis-grafico i:nth-child(2) { transition-delay: 1.5s; }
-.cena.on .sis-grafico i:nth-child(3) { transition-delay: 1.6s; }
-.cena.on .sis-grafico i:nth-child(4) { transition-delay: 1.7s; }
-.cena.on .sis-grafico i:nth-child(5) { transition-delay: 1.8s; }
-.cena.on .sis-grafico i:nth-child(6) { transition-delay: 1.9s; }
-.cena.on .sis-grafico i:nth-child(7) { transition-delay: 2s; }
+.cena.on .sis-grafico i:nth-child(2) { transition-delay: 0.81s; }
+.cena.on .sis-grafico i:nth-child(3) { transition-delay: 0.87s; }
+.cena.on .sis-grafico i:nth-child(4) { transition-delay: 0.93s; }
+.cena.on .sis-grafico i:nth-child(5) { transition-delay: 0.99s; }
+.cena.on .sis-grafico i:nth-child(6) { transition-delay: 1.05s; }
+.cena.on .sis-grafico i:nth-child(7) { transition-delay: 1.11s; }
 
 .sis-tabela {
     display: grid;
@@ -2592,7 +2593,7 @@ textarea:focus-visible {
     white-space: nowrap;
     max-width: 0;
     border-right: 2px solid var(--brand);
-    transition: max-width 0.9s steps(11), opacity 0.2s;
+    transition: max-width 0.55s steps(11), opacity 0.2s;
 }
 
 .cena.on .digita {
@@ -2716,7 +2717,7 @@ textarea:focus-visible {
 }
 
 .cena.on .lp-botao {
-    animation: clique 0.35s ease 3.9s;
+    animation: clique 0.3s ease 2.15s;
 }
 
 @keyframes clique {
@@ -2761,7 +2762,7 @@ textarea:focus-visible {
 }
 
 .cena.on .lp-cursor {
-    animation: cursor 1.6s var(--ease-out) 2.5s forwards;
+    animation: cursor 1s var(--ease-out) 1.2s forwards;
 }
 
 @keyframes cursor {
@@ -2795,14 +2796,14 @@ textarea:focus-visible {
 }
 
 .cena.on .lp-toast {
-    animation: toast 0.5s var(--ease-out) 4.2s forwards;
+    animation: toast 0.4s var(--ease-out) 2.35s forwards;
 }
 
 @keyframes toast {
     to { opacity: 1; transform: none; }
 }
 
-/* celular e tablet: texto em cima, estúdio embaixo */
+/* celular e tablet: título, depois o estúdio em destaque, depois o resto do texto */
 @media (max-width: 960px) {
     .hero {
         grid-template-columns: 1fr;
@@ -2823,6 +2824,31 @@ textarea:focus-visible {
     .hero-trust {
         justify-content: center;
     }
+
+    /* o texto vira peças soltas da grade para o estúdio entrar logo abaixo do título */
+    .hero {
+        gap: 0;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .hero-copy {
+        display: contents;
+    }
+
+    .hero-kicker { order: 1; }
+    .hero-title { order: 2; max-width: 640px; }
+
+    .estudio {
+        order: 3;
+        width: 100%;
+        max-width: 640px;
+        margin: 1.6rem 0 0.4rem;
+    }
+
+    .hero-lead { order: 4; }
+    .hero-actions { order: 5; }
+    .hero-trust { order: 6; }
 }
 
 @media (max-width: 520px) {

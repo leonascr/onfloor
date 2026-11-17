@@ -127,7 +127,7 @@
             <div class="hero-copy">
                 <p class="hero-kicker"><span></span> Agência de tecnologia · Brasília</p>
                 <h1 class="hero-title">A gente constrói o que <span class="marker">trabalha por você.</span></h1>
-                <p class="hero-lead">Automações, sistemas, redes sociais e sites que atraem clientes, atendem na hora e
+                <p class="hero-lead">Sistemas, redes sociais, sites e automações que atraem clientes, atendem na hora e
                     tiram o trabalho manual das costas da sua equipe.</p>
                 <div class="hero-actions">
                     <a href="#contato" class="btn btn-primary btn-lg">Quero o meu projeto <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
@@ -140,23 +140,81 @@
                 </ul>
             </div>
 
-            <!-- Estúdio: as entregas se constroem sozinhas, em sequência (automação → sistema → perfil → landing page) -->
+            <!-- Estúdio: as entregas se constroem sozinhas, em sequência (sistema → perfil → landing page → automação) -->
             <div class="estudio" id="estudio" role="img"
-                aria-label="Animação: a On Floor construindo, em sequência, uma automação, um sistema, um perfil de rede social e uma landing page.">
+                aria-label="Animação: a On Floor construindo, em sequência, um sistema, um perfil de rede social, uma landing page e uma automação.">
                 <div class="estudio-janela">
                     <div class="estudio-barra">
                         <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
                         <div class="estudio-abas" role="tablist" aria-label="O que estamos construindo">
-                            <button class="aba" data-cena="0" role="tab">Automação<b></b></button>
-                            <button class="aba" data-cena="1" role="tab">Sistema<b></b></button>
-                            <button class="aba" data-cena="2" role="tab">Perfil<b></b></button>
-                            <button class="aba" data-cena="3" role="tab">Landing page<b></b></button>
+                            <button class="aba" data-cena="0" role="tab">Sistema<b></b></button>
+                            <button class="aba" data-cena="1" role="tab">Perfil<b></b></button>
+                            <button class="aba" data-cena="2" role="tab">Landing page<b></b></button>
+                            <button class="aba" data-cena="3" role="tab">Automação<b></b></button>
                         </div>
                     </div>
 
                     <div class="estudio-palco" aria-hidden="true">
-                        <!-- 1. AUTOMAÇÃO -->
-                        <div class="cena cena-auto" data-cena="0">
+                        <!-- 1. SISTEMA  -->
+                        <div class="cena cena-sis" data-cena="0">
+                            <div class="sis-lateral b" style="--d:0"><i class="on"></i><i></i><i></i><i></i></div>
+                            <div class="sis-corpo">
+                                <div class="sis-kpis">
+                                    <span class="kpi b" style="--d:1"><small>Pedidos hoje</small><b>24</b></span>
+                                    <span class="kpi b" style="--d:1.4"><small>Respondidos</small><b>100%</b></span>
+                                    <span class="kpi b" style="--d:1.8"><small>Em aberto</small><b>3</b></span>
+                                </div>
+                                <div class="sis-grafico b" style="--d:2.2">
+                                    <i style="--h:38%"></i><i style="--h:55%"></i><i style="--h:46%"></i><i style="--h:70%"></i><i style="--h:62%"></i><i style="--h:88%"></i><i style="--h:76%"></i>
+                                </div>
+                                <div class="sis-tabela">
+                                    <span class="linha b" style="--d:3.2"><i></i><em class="st ok">Fechado</em></span>
+                                    <span class="linha b" style="--d:3.5"><i></i><em class="st and">Em andamento</em></span>
+                                    <span class="linha b" style="--d:3.8"><i></i><em class="st novo">Novo</em></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. PERFIL  -->
+                        <div class="cena cena-perfil" data-cena="1">
+                            <div class="perfil-topo">
+                                <span class="perfil-avatar b" style="--d:0"><i></i></span>
+                                <div class="perfil-info">
+                                    <b class="perfil-nome b digita" style="--d:0.6">suaempresa</b>
+                                    <span class="perfil-num b" style="--d:1"><b>128</b> posts <b>2,4 mil</b> seguidores</span>
+                                    <span class="perfil-bio b" style="--d:1.3"></span>
+                                </div>
+                            </div>
+                            <div class="perfil-destaques">
+                                <i class="b" style="--d:1.6"></i><i class="b" style="--d:1.75"></i><i class="b" style="--d:1.9"></i><i class="b" style="--d:2.05"></i>
+                            </div>
+                            <div class="perfil-grade">
+                                <i class="t1 b" style="--d:2.3"></i><i class="t2 b" style="--d:2.45"></i><i class="t3 b" style="--d:2.6"></i>
+                                <i class="t4 b" style="--d:2.75"></i><i class="t5 b" style="--d:2.9"></i><i class="t6 b" style="--d:3.05"></i>
+                            </div>
+                        </div>
+
+                        <!-- 3. LANDING PAGE  -->
+                        <div class="cena cena-lp" data-cena="2">
+                            <div class="lp-nav b" style="--d:0"><i class="logo"></i><i></i><i></i><i class="cta"></i></div>
+                            <div class="lp-hero">
+                                <div class="lp-texto">
+                                    <span class="lp-linha l1 b" style="--d:0.6"></span>
+                                    <span class="lp-linha l2 b" style="--d:1"></span>
+                                    <span class="lp-linha l3 b" style="--d:1.4"></span>
+                                    <span class="lp-botao b" style="--d:1.9">Pedir orçamento</span>
+                                </div>
+                                <span class="lp-imagem b" style="--d:1.2"></span>
+                            </div>
+                            <div class="lp-cards">
+                                <i class="b" style="--d:2.4"></i><i class="b" style="--d:2.6"></i><i class="b" style="--d:2.8"></i>
+                            </div>
+                            <span class="lp-cursor"><svg viewBox="0 0 24 24"><path d="M4 3l14 7-6 1.7L9.3 18z"/></svg></span>
+                            <span class="lp-toast"><svg class="icon"><use href="#i-bell"></use></svg> Novo pedido de orçamento!</span>
+                        </div>
+
+                        <!-- 4. AUTOMAÇÃO  -->
+                        <div class="cena cena-auto" data-cena="3">
                             <div class="auto-no auto-entrada b" style="--d:0">
                                 <span class="auto-ico verde"><svg class="icon"><use href="#i-message-circle"></use></svg></span>
                                 <span><b>WhatsApp</b><small>“Quero um orçamento”</small></span>
@@ -185,69 +243,11 @@
                                 <svg class="icon auto-ok"><use href="#i-circle-check"></use></svg>
                             </div>
                         </div>
-
-                        <!-- 2. SISTEMA -->
-                        <div class="cena cena-sis" data-cena="1">
-                            <div class="sis-lateral b" style="--d:0"><i class="on"></i><i></i><i></i><i></i></div>
-                            <div class="sis-corpo">
-                                <div class="sis-kpis">
-                                    <span class="kpi b" style="--d:1"><small>Pedidos hoje</small><b>24</b></span>
-                                    <span class="kpi b" style="--d:1.4"><small>Respondidos</small><b>100%</b></span>
-                                    <span class="kpi b" style="--d:1.8"><small>Em aberto</small><b>3</b></span>
-                                </div>
-                                <div class="sis-grafico b" style="--d:2.2">
-                                    <i style="--h:38%"></i><i style="--h:55%"></i><i style="--h:46%"></i><i style="--h:70%"></i><i style="--h:62%"></i><i style="--h:88%"></i><i style="--h:76%"></i>
-                                </div>
-                                <div class="sis-tabela">
-                                    <span class="linha b" style="--d:3.2"><i></i><em class="st ok">Fechado</em></span>
-                                    <span class="linha b" style="--d:3.5"><i></i><em class="st and">Em andamento</em></span>
-                                    <span class="linha b" style="--d:3.8"><i></i><em class="st novo">Novo</em></span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 3. PERFIL -->
-                        <div class="cena cena-perfil" data-cena="2">
-                            <div class="perfil-topo">
-                                <span class="perfil-avatar b" style="--d:0"><i></i></span>
-                                <div class="perfil-info">
-                                    <b class="perfil-nome b digita" style="--d:0.6">suaempresa</b>
-                                    <span class="perfil-num b" style="--d:1"><b>128</b> posts <b>2,4 mil</b> seguidores</span>
-                                    <span class="perfil-bio b" style="--d:1.3"></span>
-                                </div>
-                            </div>
-                            <div class="perfil-destaques">
-                                <i class="b" style="--d:1.6"></i><i class="b" style="--d:1.75"></i><i class="b" style="--d:1.9"></i><i class="b" style="--d:2.05"></i>
-                            </div>
-                            <div class="perfil-grade">
-                                <i class="t1 b" style="--d:2.3"></i><i class="t2 b" style="--d:2.45"></i><i class="t3 b" style="--d:2.6"></i>
-                                <i class="t4 b" style="--d:2.75"></i><i class="t5 b" style="--d:2.9"></i><i class="t6 b" style="--d:3.05"></i>
-                            </div>
-                        </div>
-
-                        <!-- 4. LANDING PAGE -->
-                        <div class="cena cena-lp" data-cena="3">
-                            <div class="lp-nav b" style="--d:0"><i class="logo"></i><i></i><i></i><i class="cta"></i></div>
-                            <div class="lp-hero">
-                                <div class="lp-texto">
-                                    <span class="lp-linha l1 b" style="--d:0.6"></span>
-                                    <span class="lp-linha l2 b" style="--d:1"></span>
-                                    <span class="lp-linha l3 b" style="--d:1.4"></span>
-                                    <span class="lp-botao b" style="--d:1.9">Pedir orçamento</span>
-                                </div>
-                                <span class="lp-imagem b" style="--d:1.2"></span>
-                            </div>
-                            <div class="lp-cards">
-                                <i class="b" style="--d:2.4"></i><i class="b" style="--d:2.6"></i><i class="b" style="--d:2.8"></i>
-                            </div>
-                            <span class="lp-cursor"><svg viewBox="0 0 24 24"><path d="M4 3l14 7-6 1.7L9.3 18z"/></svg></span>
-                            <span class="lp-toast"><svg class="icon"><use href="#i-bell"></use></svg> Novo pedido de orçamento!</span>
-                        </div>
                     </div>
 
                     <div class="estudio-status" aria-hidden="true">
                         <span class="status-ponto"></span>
-                        <span id="estudioStatus">Construindo automação…</span>
+                        <span id="estudioStatus">Construindo sistema…</span>
                     </div>
                 </div>
             </div>
