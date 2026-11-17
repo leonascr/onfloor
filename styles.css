@@ -2825,30 +2825,6 @@ textarea:focus-visible {
         justify-content: center;
     }
 
-    /* o texto vira peças soltas da grade para o estúdio entrar logo abaixo do título */
-    .hero {
-        gap: 0;
-        justify-items: center;
-        text-align: center;
-    }
-
-    .hero-copy {
-        display: contents;
-    }
-
-    .hero-kicker { order: 1; }
-    .hero-title { order: 2; max-width: 640px; }
-
-    .estudio {
-        order: 3;
-        width: 100%;
-        max-width: 640px;
-        margin: 1.6rem 0 0.4rem;
-    }
-
-    .hero-lead { order: 4; }
-    .hero-actions { order: 5; }
-    .hero-trust { order: 6; }
 }
 
 @media (max-width: 520px) {
@@ -3038,4 +3014,59 @@ textarea:focus-visible {
     .step-num {
         margin-top: 0;
     }
+}
+
+/* ═══════════════ HERO minimalista: título grande atrás do estúdio (16/11) ═══════════════ */
+.hero {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    text-align: center;
+    gap: 0;
+    min-height: 0;
+    padding-top: clamp(7rem, 11vw, 9rem);
+}
+
+.hero-copy { display: contents; }
+
+.hero-kicker { order: 1; margin-bottom: 1.2rem; }
+
+.hero-title {
+    order: 2;
+    position: relative;
+    z-index: 0;
+    margin: 0;
+    font-size: clamp(2.7rem, 6.6vw, 6.2rem);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+}
+
+.hero-title .marker { white-space: nowrap; }
+
+/* o estúdio sobe e passa na frente só da base da segunda linha */
+.estudio {
+    order: 3;
+    position: relative;
+    z-index: 1;
+    width: min(100%, 720px);
+    /* só as pernas das letras (g, ó, ç) ficam atrás da janela */
+    margin-top: 0.1rem;
+}
+
+.hero-lead {
+    order: 4;
+    margin: 1.8rem auto 0;
+    max-width: 46ch;
+    font-size: 1.08rem;
+}
+
+.hero-actions {
+    order: 5;
+    justify-content: center;
+    margin-top: 1.3rem;
+}
+
+@media (max-width: 520px) {
+    .hero { padding-top: 6.5rem; }
+    .hero-title { font-size: clamp(2.1rem, 9.6vw, 3rem); }
+    .estudio { margin-top: 0; }
 }
