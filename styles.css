@@ -3115,3 +3115,113 @@ textarea:focus-visible {
 @media (max-width: 520px) {
     .estudio { margin-top: 1rem; }
 }
+
+/* ─── Automação mais viva (16/11): energia nos fios, pacotes com brilho, núcleo girando, saídas que reagem ─── */
+.energia {
+    fill: none;
+    stroke: url(#fioGrad);
+    stroke-width: 3.5;
+    stroke-linecap: round;
+    stroke-dasharray: 0.12 0.18;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.cena.on .energia {
+    opacity: 1;
+    transition-delay: calc(var(--d) * 0.24s + 0.08s);
+    animation: energia 0.6s linear infinite;
+}
+
+@keyframes energia { to { stroke-dashoffset: -0.3; } }
+
+.pacotes { opacity: 0; transition: opacity 0.3s; }
+.cena.on .pacotes { opacity: 1; transition-delay: calc(var(--d) * 0.24s + 0.08s); }
+.pacotes .pacote { fill: #fff; stroke: var(--brand); stroke-width: 3; opacity: 1; }
+.pacotes .halo { fill: #c455fb; opacity: 0.75; }
+
+/* núcleo: anel de luz girando por trás e um "respiro" a cada pedido */
+.nucleo-giro {
+    position: absolute;
+    inset: -22%;
+    border-radius: 34%;
+    background: conic-gradient(from 0deg, transparent 0 55%, rgba(196, 85, 251, 0.85) 75%, transparent 90%);
+    filter: blur(6px);
+    z-index: -1;
+}
+
+.cena.on .nucleo-giro { animation: gira 1.4s linear infinite; }
+.cena.on .auto-nucleo img { animation: respira 0.9s ease-in-out 1.2s infinite; }
+
+@keyframes respira {
+    0%, 100% { transform: scale(1); }
+    40% { transform: scale(1.14); }
+}
+
+/* entrada: mensagem trocando e o "digitando…" */
+.auto-msg small { display: block; transition: opacity 0.2s, transform 0.2s; }
+.auto-msg small.troca { opacity: 0; transform: translateY(4px); }
+
+.auto-digita {
+    position: absolute;
+    right: 0.6rem;
+    top: -0.55rem;
+    display: flex;
+    gap: 3px;
+    padding: 0.3rem 0.45rem;
+    border-radius: 999px;
+    background: #16a34a;
+    box-shadow: 0 6px 14px -6px rgba(22, 163, 74, 0.8);
+}
+
+.auto-digita i {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #fff;
+    animation: digita 0.9s ease-in-out infinite;
+}
+
+.auto-digita i:nth-child(2) { animation-delay: 0.15s; }
+.auto-digita i:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes digita {
+    0%, 100% { opacity: 0.35; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(-2px); }
+}
+
+/* saídas: a cada pedido o card pulsa, o check acende e sobe um "+1" */
+.auto-saida em { font-style: normal; color: var(--brand); }
+.auto-saida.pulsa { animation: chega 0.5s var(--ease-out); }
+
+@keyframes chega {
+    0% { box-shadow: 0 0 0 0 rgba(114, 22, 211, 0.45); }
+    100% { box-shadow: 0 0 0 12px rgba(114, 22, 211, 0); }
+}
+
+.auto-mais {
+    position: absolute;
+    right: 0.7rem;
+    top: 0;
+    font: 800 0.8rem var(--font);
+    color: var(--brand);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.auto-saida.pulsa .auto-mais { animation: sobe 0.8s var(--ease-out); }
+
+@keyframes sobe {
+    0% { opacity: 0; transform: translateY(0); }
+    30% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-1.4rem); }
+}
+
+@media (max-width: 520px) {
+    /* no celular o card é estreito e o "digitando" cobriria o nome */
+    .auto-digita { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .energia, .nucleo-giro, .auto-nucleo img, .auto-digita i, .auto-saida.pulsa, .auto-mais { animation: none !important; }
+}

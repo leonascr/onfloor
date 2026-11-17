@@ -99,15 +99,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ─── HERO: estúdio que constrói sozinho ───────────────
-    // Cada cena (sistema → perfil → landing page → automação) monta as peças na sua vez
+    // Cada cena (sistema → automação → perfil → landing page) monta as peças na sua vez
     // (classe .on dispara as transições do CSS) e passa para a próxima.
     const estudio = document.getElementById('estudio');
     if (estudio) {
         const cenas = [...estudio.querySelectorAll('.cena')];
         const abas = [...estudio.querySelectorAll('.aba')];
         const status = document.getElementById('estudioStatus');
-        const nomes = ['sistema', 'perfil', 'landing page', 'automação'];
-        const prontos = ['Sistema pronto: tudo num lugar só', 'Perfil pronto: posts no ar', 'Landing page pronta: chegou um pedido', 'Automação pronta: o pedido entrou sozinho'];
+        const nomes = ['sistema', 'automação', 'perfil', 'landing page'];
+        const prontos = ['Sistema pronto: tudo num lugar só', 'Automação rodando: os pedidos entram sozinhos', 'Perfil pronto: posts no ar', 'Landing page pronta: chegou um pedido'];
         const DURACAO = 4300; // ritmo rápido, pedido do Leo em 16/11
         let atual = -1;
         let relogio = null;
@@ -127,11 +127,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 b.replaceWith(b.cloneNode(true));
             });
             status.textContent = `Construindo ${nomes[i]}…`;
+            automacaoViva(i === 1);
             relogio = setTimeout(() => {
                 estudio.classList.add('pronto');
                 status.textContent = prontos[i];
                 relogio = setTimeout(() => { if (visivel) mostrar((i + 1) % cenas.length); else atual = -2; }, DURACAO - 2700);
             }, 2700);
+        }
+
+        // Automação: enquanto a cena está na tela, chega pedido novo a cada ~1 s
+        const autoMsg = document.getElementById('autoMsg');
+        const autoNum = document.getElementById('autoNum');
+        const autoSeg = document.getElementById('autoSeg');
+        const saidas = [...estudio.querySelectorAll('.auto-saida')];
+        const pedidos = ['“Quero um orçamento”', '“Tem horário amanhã?”', '“Qual o valor do serviço?”', '“Vocês atendem no Lago?”'];
+        let pulso = null, numero = 1042, k = 0;
+        const pulsar = (el) => { el.classList.remove('pulsa'); void el.offsetWidth; el.classList.add('pulsa'); };
+        function automacaoViva(ligar) {
+            clearInterval(pulso);
+            if (!ligar || reduceMotion || !autoMsg) return;
+            const passo = () => {
+                autoMsg.classList.add('troca');
+                setTimeout(() => { autoMsg.textContent = pedidos[k++ % pedidos.length]; autoMsg.classList.remove('troca'); }, 180);
+                setTimeout(() => { autoNum.textContent = '#' + (++numero); pulsar(saidas[0]); }, 520);
+                setTimeout(() => { autoSeg.textContent = String(2 + (k % 3)); pulsar(saidas[1]); }, 720);
+            };
+            setTimeout(passo, 900);
+            pulso = setInterval(passo, 1100);
         }
 
         estudio.style.setProperty('--duracao', `${DURACAO}ms`);

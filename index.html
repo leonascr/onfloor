@@ -133,17 +133,17 @@
                 </div>
             </div>
 
-            <!-- Estúdio: as entregas se constroem sozinhas, em sequência (sistema → perfil → landing page → automação) -->
+            <!-- Estúdio: as entregas se constroem sozinhas, em sequência (sistema → automação → perfil → landing page) -->
             <div class="estudio" id="estudio" role="img"
-                aria-label="Animação: a On Floor construindo, em sequência, um sistema, um perfil de rede social, uma landing page e uma automação.">
+                aria-label="Animação: a On Floor construindo, em sequência, um sistema, uma automação, um perfil de rede social e uma landing page.">
                 <div class="estudio-janela">
                     <div class="estudio-barra">
                         <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
                         <div class="estudio-abas" role="tablist" aria-label="O que estamos construindo">
                             <button class="aba" data-cena="0" role="tab">Sistema<b></b></button>
-                            <button class="aba" data-cena="1" role="tab">Perfil<b></b></button>
-                            <button class="aba" data-cena="2" role="tab">Landing page<b></b></button>
-                            <button class="aba" data-cena="3" role="tab">Automação<b></b></button>
+                            <button class="aba" data-cena="1" role="tab">Automação<b></b></button>
+                            <button class="aba" data-cena="2" role="tab">Perfil<b></b></button>
+                            <button class="aba" data-cena="3" role="tab">Landing page<b></b></button>
                         </div>
                     </div>
 
@@ -168,8 +168,55 @@
                             </div>
                         </div>
 
-                        <!-- 2. PERFIL  -->
-                        <div class="cena cena-perfil" data-cena="1">
+                        <!-- 2. AUTOMAÇÃO: pedidos chegam sem parar, correm pelos fios e caem prontos -->
+                        <div class="cena cena-auto" data-cena="1">
+                            <div class="auto-no auto-entrada b" style="--d:0">
+                                <span class="auto-ico verde"><svg class="icon"><use href="#i-message-circle"></use></svg></span>
+                                <span class="auto-msg"><b>WhatsApp</b><small id="autoMsg">“Quero um orçamento”</small></span>
+                                <span class="auto-digita" aria-hidden="true"><i></i><i></i><i></i></span>
+                            </div>
+                            <!-- fios em SVG no mesmo tamanho do palco (560×330): desenham, a energia corre e os pacotes viajam -->
+                            <svg class="auto-fios" viewBox="0 0 560 330">
+                                <defs>
+                                    <linearGradient id="fioGrad" x1="0" x2="1"><stop offset="0" stop-color="#c455fb"/><stop offset="1" stop-color="#7216d3"/></linearGradient>
+                                    <filter id="brilho" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3.5"/></filter>
+                                </defs>
+                                <path class="fio" style="--d:1" pathLength="1" d="M190 165 L242 165" />
+                                <path class="fio" style="--d:2.2" pathLength="1" d="M318 165 C348 165 340 75 370 75" />
+                                <path class="fio" style="--d:2.4" pathLength="1" d="M318 165 C348 165 340 255 370 255" />
+                                <path class="energia" style="--d:1.4" pathLength="1" d="M190 165 L242 165" />
+                                <path class="energia" style="--d:2.6" pathLength="1" d="M318 165 C348 165 340 75 370 75" />
+                                <path class="energia" style="--d:2.8" pathLength="1" d="M318 165 C348 165 340 255 370 255" />
+                                <g class="pacotes" style="--d:1.6">
+                                    <circle class="halo" r="9" filter="url(#brilho)"><animateMotion dur="0.7s" repeatCount="indefinite" path="M190 165 L242 165" /></circle>
+                                    <circle class="pacote" r="5"><animateMotion dur="0.7s" repeatCount="indefinite" path="M190 165 L242 165" /></circle>
+                                    <circle class="halo" r="9" filter="url(#brilho)"><animateMotion dur="0.9s" begin="0.35s" repeatCount="indefinite" path="M318 165 C348 165 340 75 370 75" /></circle>
+                                    <circle class="pacote" r="5"><animateMotion dur="0.9s" begin="0.35s" repeatCount="indefinite" path="M318 165 C348 165 340 75 370 75" /></circle>
+                                    <circle class="halo" r="9" filter="url(#brilho)"><animateMotion dur="0.9s" begin="0.55s" repeatCount="indefinite" path="M318 165 C348 165 340 255 370 255" /></circle>
+                                    <circle class="pacote" r="5"><animateMotion dur="0.9s" begin="0.55s" repeatCount="indefinite" path="M318 165 C348 165 340 255 370 255" /></circle>
+                                </g>
+                            </svg>
+                            <div class="auto-nucleo b" style="--d:1.2">
+                                <span class="nucleo-giro"></span>
+                                <span class="nucleo-anel"></span>
+                                <img src="logo/glyph-white.png" alt="" width="120" height="120">
+                            </div>
+                            <div class="auto-no auto-saida s1 b" style="--d:2.6">
+                                <span class="auto-ico"><svg class="icon"><use href="#i-database"></use></svg></span>
+                                <span><b>Pedido <em id="autoNum">#1042</em></b><small>no sistema, sozinho</small></span>
+                                <svg class="icon auto-ok"><use href="#i-circle-check"></use></svg>
+                                <span class="auto-mais" aria-hidden="true">+1</span>
+                            </div>
+                            <div class="auto-no auto-saida s2 b" style="--d:2.9">
+                                <span class="auto-ico"><svg class="icon"><use href="#i-send"></use></svg></span>
+                                <span><b>Cliente respondido</b><small>em <em id="autoSeg">3</em> segundos</small></span>
+                                <svg class="icon auto-ok"><use href="#i-circle-check"></use></svg>
+                                <span class="auto-mais" aria-hidden="true">✓</span>
+                            </div>
+                        </div>
+
+                        <!-- 3. PERFIL  -->
+                        <div class="cena cena-perfil" data-cena="2">
                             <div class="perfil-topo">
                                 <span class="perfil-avatar b" style="--d:0"><i></i></span>
                                 <div class="perfil-info">
@@ -187,8 +234,8 @@
                             </div>
                         </div>
 
-                        <!-- 3. LANDING PAGE  -->
-                        <div class="cena cena-lp" data-cena="2">
+                        <!-- 4. LANDING PAGE  -->
+                        <div class="cena cena-lp" data-cena="3">
                             <div class="lp-nav b" style="--d:0"><i class="logo"></i><i></i><i></i><i class="cta"></i></div>
                             <div class="lp-hero">
                                 <div class="lp-texto">
@@ -204,37 +251,6 @@
                             </div>
                             <span class="lp-cursor"><svg viewBox="0 0 24 24"><path d="M4 3l14 7-6 1.7L9.3 18z"/></svg></span>
                             <span class="lp-toast"><svg class="icon"><use href="#i-bell"></use></svg> Novo pedido de orçamento!</span>
-                        </div>
-
-                        <!-- 4. AUTOMAÇÃO  -->
-                        <div class="cena cena-auto" data-cena="3">
-                            <div class="auto-no auto-entrada b" style="--d:0">
-                                <span class="auto-ico verde"><svg class="icon"><use href="#i-message-circle"></use></svg></span>
-                                <span><b>WhatsApp</b><small>“Quero um orçamento”</small></span>
-                            </div>
-                            <!-- fios em SVG no mesmo tamanho do palco (560×330): desenham e depois levam um "pacote" -->
-                            <svg class="auto-fios" viewBox="0 0 560 330">
-                                <path class="fio" style="--d:1" pathLength="1" d="M190 165 L242 165" />
-                                <path class="fio" style="--d:3" pathLength="1" d="M318 165 C348 165 340 75 370 75" />
-                                <path class="fio" style="--d:3.2" pathLength="1" d="M318 165 C348 165 340 255 370 255" />
-                                <circle class="pacote" style="--d:2" r="5"><animateMotion dur="1.4s" repeatCount="indefinite" path="M190 165 L242 165" /></circle>
-                                <circle class="pacote" style="--d:4" r="5"><animateMotion dur="1.6s" repeatCount="indefinite" path="M318 165 C348 165 340 75 370 75" /></circle>
-                                <circle class="pacote" style="--d:4.4" r="5"><animateMotion dur="1.6s" repeatCount="indefinite" path="M318 165 C348 165 340 255 370 255" /></circle>
-                            </svg>
-                            <div class="auto-nucleo b" style="--d:2">
-                                <span class="nucleo-anel"></span>
-                                <img src="logo/glyph-white.png" alt="" width="120" height="120">
-                            </div>
-                            <div class="auto-no auto-saida s1 b" style="--d:4">
-                                <span class="auto-ico"><svg class="icon"><use href="#i-database"></use></svg></span>
-                                <span><b>Pedido no sistema</b><small>cadastrado sozinho</small></span>
-                                <svg class="icon auto-ok"><use href="#i-circle-check"></use></svg>
-                            </div>
-                            <div class="auto-no auto-saida s2 b" style="--d:5">
-                                <span class="auto-ico"><svg class="icon"><use href="#i-send"></use></svg></span>
-                                <span><b>Cliente respondido</b><small>na hora, 24h</small></span>
-                                <svg class="icon auto-ok"><use href="#i-circle-check"></use></svg>
-                            </div>
                         </div>
                     </div>
 
