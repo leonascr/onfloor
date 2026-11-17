@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const status = document.getElementById('estudioStatus');
         const nomes = ['sistema', 'automação', 'perfil', 'landing page'];
         const prontos = ['Sistema pronto: tudo num lugar só', 'Automação rodando: os pedidos entram sozinhos', 'Perfil pronto: posts no ar', 'Landing page pronta: chegou um pedido'];
-        const DURACAO = 3000; // ritmo rápido para reter (pedidos do Leo em 16 e 17/11)
+        const DURACAO = 4300; // ritmo rápido, pedido do Leo em 16/11
         let atual = -1;
         let relogio = null;
         let visivel = true;
@@ -131,8 +131,8 @@ document.addEventListener('DOMContentLoaded', () => {
             relogio = setTimeout(() => {
                 estudio.classList.add('pronto');
                 status.textContent = prontos[i];
-                relogio = setTimeout(() => { if (visivel) mostrar((i + 1) % cenas.length); else atual = -2; }, DURACAO - 1800);
-            }, 1800);
+                relogio = setTimeout(() => { if (visivel) mostrar((i + 1) % cenas.length); else atual = -2; }, DURACAO - 2700);
+            }, 2700);
         }
 
         // Automação: enquanto a cena está na tela, chega pedido novo a cada ~1 s
@@ -149,11 +149,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const passo = () => {
                 autoMsg.classList.add('troca');
                 setTimeout(() => { autoMsg.textContent = pedidos[k++ % pedidos.length]; autoMsg.classList.remove('troca'); }, 180);
-                setTimeout(() => { autoNum.textContent = '#' + (++numero); pulsar(saidas[0]); }, 330);
-                setTimeout(() => { autoSeg.textContent = String(2 + (k % 3)); pulsar(saidas[1]); }, 460);
+                setTimeout(() => { autoNum.textContent = '#' + (++numero); pulsar(saidas[0]); }, 520);
+                setTimeout(() => { autoSeg.textContent = String(2 + (k % 3)); pulsar(saidas[1]); }, 720);
             };
-            setTimeout(passo, 450);
-            pulso = setInterval(passo, 700);
+            setTimeout(passo, 900);
+            pulso = setInterval(passo, 1100);
         }
 
         estudio.style.setProperty('--duracao', `${DURACAO}ms`);
